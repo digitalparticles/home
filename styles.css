@@ -24,7 +24,7 @@ header {
 }
 
 h1 {
-    color: #530650a2;
+    color: #101fc8a2;
     font-size: 12ch;
     font-family: "Micro 5", sans-serif;
 }
@@ -53,12 +53,12 @@ p {
     padding: 15px 65px;
     background-color: #022c5773;
     /* make it fully visible */
-    color: #e40defac;
+    color: #940b9bcc;
     /* visible text */
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
-    font-size: 150%;
+    font-size: 170%;
     font-weight: bold;
     transition: background-color 0.3s;
     cursor: pointer;
