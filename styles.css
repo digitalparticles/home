@@ -24,15 +24,19 @@ header {
 }
 
 h1 {
-    color: #156ada34;
-    font-size: 10ch;
+    color: #530650a2;
+    font-size: 12ch;
     font-family: "Micro 5", sans-serif;
 }
 
+h2 {
+    font-size: 7ch;
+}
+
 main {
-    color: #156ada81;
+    color: #0f52abd2;
     font-family: "Micro 5", sans-serif;
-    font-weight: 400;
+    font-weight: 50ch;
     font-style: normal;
 }
 
@@ -41,18 +45,31 @@ p {
 }
 
 .btn {
+    position: relative;
+    /* allow z-index to work */
+    z-index: 10;
+    /* above particles */
     display: inline-block;
     padding: 15px 65px;
-    background-color: #007bff11;
-    color: #cc4d6066;
+    background-color: #022c5773;
+    /* make it fully visible */
+    color: #e40defac;
+    /* visible text */
     text-decoration: none;
     border-radius: 5px;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
     transition: background-color 0.3s;
+    cursor: pointer;
+    /* shows pointer on hover */
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #00438b71;
+    color: #0750eef6;
 }
+
 
 footer {
     margin-top: 50px;
