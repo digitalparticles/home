@@ -23,15 +23,54 @@ header {
     margin-bottom: 20px;
 }
 
+/*
 h1 {
     color: #101fc8a2;
     font-size: 12ch;
     font-family: "Micro 5", sans-serif;
+}*/
+
+.wave-title {
+    font-family: "Micro 5", sans-serif;
+    font-size: 12ch;
+    /* Keep your size */
+    color: #101fc8a2;
+    /* Keep your base color */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
+.wave-title span {
+    display: inline-block;
+    animation: colorWave 2s infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+    /* stagger letters */
+}
+
+/* Color wave animation */
+@keyframes colorWave {
+
+    0%,
+    100% {
+        color: #101fc8a2;
+    }
+
+    50% {
+        color: #2f81dfa2;
+    }
+
+    /* lighter color at peak */
+}
+
+
+
+
 
 h2 {
     font-size: 7ch;
 }
+
 
 main {
     color: #0f52abd2;
@@ -39,6 +78,73 @@ main {
     font-weight: 50ch;
     font-style: normal;
 }
+
+/*fade animation*/
+
+h2 {
+    color: #0f52abd2;
+    font-family: "Micro 5", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    animation: fadeText 3s infinite alternate;
+}
+
+@keyframes fadeText {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+
+/* GLOW
+h2 {
+    color: #0f52abd2;
+    font-family: "Micro 5", sans-serif;
+    font-weight: 500;
+    text-shadow: 0 0 1.5px #0f52abd2, 0 0 6px #0f52abd2, 0 0 7px #0f52abd2;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 1.5px #0f52abd2, 0 0 2.5px #0f52abd2;
+    }
+
+    50% {
+        text-shadow: 0 0 3px #0f52abd2, 0 0 6px #0f52abd2, 0 0 10px #0f52abd2;
+    }
+
+    100% {
+        text-shadow: 0 0 1.5px #0f52abd2, 0 0 2.5px #0f52abd2;
+    }
+} */
+
+/* breathing effect
+h2 {
+    color: #0f52abd2;
+    font-family: "Micro 5", sans-serif;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+} */
 
 p {
     line-height: 1.6;
