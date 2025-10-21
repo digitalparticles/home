@@ -30,12 +30,14 @@ h1 {
     font-family: "Micro 5", sans-serif;
 }*/
 
+
+/* first animation not mobile friendly
 .wave-title {
     font-family: "Micro 5", sans-serif;
     font-size: 12ch;
-    /* Keep your size */
+    
     color: #101fc8a2;
-    /* Keep your base color */
+  
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -45,10 +47,9 @@ h1 {
     display: inline-block;
     animation: colorWave 2s infinite;
     animation-delay: calc(var(--i) * 0.1s);
-    /* stagger letters */
+    
 }
 
-/* Color wave animation */
 @keyframes colorWave {
 
     0%,
@@ -60,9 +61,56 @@ h1 {
         color: #2f81dfa2;
     }
 
-    /* lighter color at peak */
+}    
+
+*/
+
+.wave-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    color: #101fc8a2;
+    font-size: 12ch;
+    font-family: "Micro 5", sans-serif;
 }
 
+.wave-title .word {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 0.2em;
+}
+
+.wave-title span {
+    display: inline-block;
+    animation: waveColor 2s infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes waveColor {
+
+    0%,
+    100% {
+        color: #101fc8a2;
+    }
+
+    50% {
+        color: #4d6aff;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .wave-title {
+        font-size: 10ch;
+        flex-direction: column;
+    }
+
+    .wave-title .word {
+        justify-content: center;
+    }
+}
 
 
 

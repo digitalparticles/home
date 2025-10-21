@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #03051e;
+    color: #ffffffcc;
+    font-family: "IBM Plex Sans", sans-serif;
+    overflow-x: hidden;
+    font-family: oxanium;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+h1 {
+    font-size-adjust: calc(10%);
+    color: #980abbcc;
+    font-family: oxanium;
+}
+
+/* Services section */
+.services {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: left;
+    color: #0f52abd2;
+}
+
+.services h2 {
+    font-family: "Micro 5", sans-serif;
+    font-size: 4ch;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #101fc8a2;
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services ul li {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+.services ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #101fc8a2;
+}
+
+/* Button */
+.center {
+    text-align: center;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 30px;
+    background-color: #007bff22;
+    color: #cd38b266;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+    color: #20a9f9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 0.8rem;
+    color: #555;
+    padding-bottom: 40px;
+}

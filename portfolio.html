@@ -4,107 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Parallax</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow-x: hidden;
-            font-family: 'Micro 5', sans-serif;
-            background-color: #03051e;
-            color: white;
-        }
-
-        .section {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .parallax-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-out;
-            z-index: -1;
-        }
-
-        .parallax-image.active {
-            opacity: 1;
-        }
-
-        .content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-        }
-
-        h1,
-        h2 {
-            margin: 0;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 50px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Portfolio - Penrose Particles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&family=IBM+Plex+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesportfolio.css">
 </head>
 
 <body>
+    <header>
+        <h1>Art & Design Services</h1>
 
-    <div class="section">
-        <img src="images/project1.jpg" class="parallax-image active" alt="Project 1">
-        <img src="images/project2.jpg" class="parallax-image" alt="Project 2">
-        <img src="images/project3.jpg" class="parallax-image" alt="Project 3">
-        <div class="content">
-            <h1>My Portfolio</h1>
-            <a href="index.html" class="btn">Back to Home</a>
+    </header>
+
+    <section class="services">
+        <h2></h2>
+
+
+        <div class="center">
+            <a href="index.html" class="btn-back">Back to Home</a>
         </div>
-    </div>
+    </section>
 
-    <script>
-        // Parallax fade effect on scroll
-        const images = document.querySelectorAll('.parallax-image');
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const windowHeight = window.innerHeight;
-
-            images.forEach((img, index) => {
-                const imgTop = index * windowHeight; // Each image section
-                const imgBottom = imgTop + windowHeight;
-
-                if (scrollTop >= imgTop && scrollTop < imgBottom) {
-                    img.classList.add('active');
-                } else {
-                    img.classList.remove('active');
-                }
-            });
-        });
-    </script>
-
+    <footer>
+        <p>&copy; 2025 Penrose Particles – All Rights Reserved.</p>
+    </footer>
 </body>
 
 </html>
