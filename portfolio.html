@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFPEWDXCFG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-YFPEWDXCFG');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Penrose Particles</title>
@@ -10,22 +19,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesportfolio.css">
+    <link rel="stylesheet" href="portfolio.css">
 </head>
 
 <body>
     <header>
-        <h1>Art & Design Services</h1>
+        <h1>ART & DESIGN</h1>
 
     </header>
 
-    <section class="services">
-        <h2></h2>
-
-
-        <div class="center">
-            <a href="index.html" class="btn-back">Back to Home</a>
+    <section class="fade-carousel">
+        <div class="carousel-track">
+            <img src="images/art1.jpg" alt="Artwork 1" class="active">
+            <img src="images/art2.jpg" alt="Artwork 2">
+            <img src="images/art3.jpg" alt="Artwork 3">
+            <img src="images/art4.jpg" alt="Artwork 4">
+            <img src="images/art5.jpg" alt="Artwork 5">
         </div>
+    </section>
+
+    <script src="carousel.js"></script>
+
+
+    <div class="center">
+        <a href="index.html" class="btn-back">Back to Home</a>
+    </div>
     </section>
 
     <footer>

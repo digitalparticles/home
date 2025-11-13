@@ -30,41 +30,6 @@ h1 {
     font-family: "Micro 5", sans-serif;
 }*/
 
-
-/* first animation not mobile friendly
-.wave-title {
-    font-family: "Micro 5", sans-serif;
-    font-size: 12ch;
-    
-    color: #101fc8a2;
-  
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.wave-title span {
-    display: inline-block;
-    animation: colorWave 2s infinite;
-    animation-delay: calc(var(--i) * 0.1s);
-    
-}
-
-@keyframes colorWave {
-
-    0%,
-    100% {
-        color: #101fc8a2;
-    }
-
-    50% {
-        color: #2f81dfa2;
-    }
-
-}    
-
-*/
-
 .wave-title {
     display: flex;
     flex-wrap: wrap;
@@ -111,8 +76,6 @@ h1 {
         justify-content: center;
     }
 }
-
-
 
 
 h2 {
