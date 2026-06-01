@@ -72,14 +72,19 @@ h1 {
         flex-direction: column;
     }
 
+    .wave-title {
+        transform: translateY(-30px);
+    }
+
     .wave-title .word {
         justify-content: center;
     }
 }
 
 
+
 h2 {
-    font-size: 10ch;
+    font-size: 8ch;
 }
 
 
@@ -94,7 +99,7 @@ main {
 
 h2 {
     color: #0f52abd2;
-    font-family: "Micro 5", sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
     font-weight: 500;
     font-style: normal;
     animation: fadeText 3s infinite alternate;
