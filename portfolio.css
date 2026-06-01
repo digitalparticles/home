@@ -54,9 +54,13 @@ h1 {
 /* Mobile responsive */
 @media (max-width: 600px) {
     .fade-carousel {
-        width: 90%;
-        height: auto;
-        aspect-ratio: 1 / 1;
+        width: 90vw;
+        height: 90vw;
+        margin: 40px auto;
+    }
+
+    .carousel-track img {
+        object-fit: cover;
     }
 }
 
