@@ -55,7 +55,8 @@ h1 {
 @media (max-width: 600px) {
     .fade-carousel {
         width: 90%;
-        height: 300px;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 }
 
