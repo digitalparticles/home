@@ -70,15 +70,12 @@ h1 {
     .wave-title {
         font-size: 10ch;
         flex-direction: column;
-    }
-
-    .wave-title {
         transform: translateY(-30px);
     }
 
-    .wave-title .word {
+    /* .wave-title .word {
         justify-content: center;
-    }
+    } */
 }
 
 
@@ -213,7 +210,7 @@ footer p {
 }
 
 .all-rights-reserved {
-    color: #f8f8f8;
+    color: #bbbbbb;
     font-size: x-small;
     position: fixed;
     bottom: 0;
