@@ -5,41 +5,110 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Penrose Particles</title>
-</head>
 
-<style />
-.cards {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 80px;
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #06105f 0%, #020438 45%, #000018 100%);
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
 
-margin-top: 80px;
-}
+        .stars {
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(#ffffff 1px, transparent 1px),
+                radial-gradient(#3449ff 1px, transparent 1px);
+            background-size: 140px 140px, 220px 220px;
+            opacity: 0.35;
+        }
 
-.card {
-display: block;
-width: 500px;
+        .page {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 45px;
+        }
 
-transition: all .3s ease;
-}
+        h1 {
+            margin: 0;
+            font-size: clamp(38px, 6vw, 84px);
+            letter-spacing: 10px;
+            color: #3449ff;
+            text-shadow: 0 0 18px #3449ff;
+        }
 
-.card img {
-width: 100%;
-display: block;
+        .quote {
+            position: absolute;
+            left: 40px;
+            bottom: 35px;
+            color: #5a7cff;
+            letter-spacing: 4px;
+            font-size: 13px;
+            line-height: 1.8;
+            text-transform: uppercase;
+        }
 
-border-radius: 12px;
-}
+        .cards {
+            display: flex;
+            gap: 80px;
+        }
 
-.card:hover {
-transform: translateY(-10px) scale(1.03);
-}
+        .card {
+            display: block;
+            width: 420px;
+            transition: 0.3s ease;
+        }
 
-.card:hover img {
-filter: drop-shadow(0 0 25px #3449ff)
-drop-shadow(0 0 40px #a93ad9);
-}
-</style>
+        .card img {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+
+            border: 1px solid #3449ff;
+            box-shadow: 0 0 25px rgba(52, 73, 255, 0.35);
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .card:hover img {
+            border-color: #a93ad9;
+            box-shadow:
+                0 0 25px rgba(52, 73, 255, 0.6),
+                0 0 50px rgba(169, 58, 217, 0.5);
+        }
+
+        @media (max-width: 850px) {
+
+            body {
+                overflow: auto;
+            }
+
+            .cards {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .card {
+                width: 85vw;
+            }
+
+            .quote {
+                position: static;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+        }
+    </style>
 
 <body>
     <div class="stars"></div>
