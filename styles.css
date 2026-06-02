@@ -96,7 +96,7 @@ main {
 
 h2 {
     color: #0f52abd2;
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 500;
     font-style: normal;
     animation: fadeText 3s infinite alternate;
