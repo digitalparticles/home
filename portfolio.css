@@ -148,7 +148,26 @@ h1 {
     }
 } */
 
+.webapp-card {
+    max-width: 600px;
+    margin: 100px auto 60px;
+    padding: 35px 20px;
+    text-align: center;
+    background-color: #022c5733;
+    border: 1px solid #20a9f944;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #101fc833;
+}
 
+.webapp-card h2 {
+    margin-top: 0;
+    color: #20a9f9a2;
+}
+
+.webapp-card p {
+    margin-bottom: 0;
+    color: #ffffffaa;
+}
 
 
 /* Button */
