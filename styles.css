@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Micro+5&family=Orbitron:wght@900&display=swap');
+@import url('https://googleapis.com');
 
 body {
     margin: 0;
@@ -70,18 +71,12 @@ h1 {
     .wave-title {
         font-size: 10ch;
         flex-direction: column;
-        transform: translateY(-30px);
+        transform: translateY(-50px);
     }
 
     /* .wave-title .word {
         justify-content: center;
     } */
-}
-
-
-
-h2 {
-    font-size: 8ch;
 }
 
 
@@ -92,13 +87,12 @@ main {
     font-style: normal;
 }
 
-/*fade animation*/
-
 h2 {
     color: #0f52abd2;
     font-family: 'Orbitron', sans-serif;
     font-weight: 500;
     font-style: normal;
+    font-size: 8ch;
     animation: fadeText 3s infinite alternate;
 }
 
@@ -115,49 +109,6 @@ h2 {
         opacity: 0.6;
     }
 }
-
-
-/* GLOW
-h2 {
-    color: #0f52abd2;
-    font-family: "Micro 5", sans-serif;
-    font-weight: 500;
-    text-shadow: 0 0 1.5px #0f52abd2, 0 0 6px #0f52abd2, 0 0 7px #0f52abd2;
-    animation: glow 3s infinite alternate;
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 1.5px #0f52abd2, 0 0 2.5px #0f52abd2;
-    }
-
-    50% {
-        text-shadow: 0 0 3px #0f52abd2, 0 0 6px #0f52abd2, 0 0 10px #0f52abd2;
-    }
-
-    100% {
-        text-shadow: 0 0 1.5px #0f52abd2, 0 0 2.5px #0f52abd2;
-    }
-} */
-
-/* breathing effect
-h2 {
-    color: #0f52abd2;
-    font-family: "Micro 5", sans-serif;
-    animation: pulse 3s infinite ease-in-out;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.02);
-    }
-} */
 
 p {
     line-height: 1.6;
@@ -181,14 +132,12 @@ p {
     font-weight: bold;
     transition: background-color 0.3s;
     cursor: pointer;
-    /* shows pointer on hover */
 }
 
 .btn:hover {
     background-color: #00438b71;
     color: #0750eef6;
 }
-
 
 footer {
     margin-top: 50px;
