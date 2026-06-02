@@ -7,161 +7,32 @@
     <title>Penrose Particles</title>
 
     <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background: radial-gradient(circle at center, #06105f 0%, #020438 45%, #000018 100%);
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        .stars {
-            position: fixed;
-            inset: 0;
-            background-image:
-                radial-gradient(#ffffff 1px, transparent 1px),
-                radial-gradient(#3449ff 1px, transparent 1px);
-            background-size: 140px 140px, 220px 220px;
-            opacity: 0.35;
-        }
-
-        .page {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 45px;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: clamp(38px, 6vw, 84px);
-            letter-spacing: 10px;
-            color: #3449ff;
-            text-shadow: 0 0 18px #3449ff;
-        }
-
-        .quote {
-            position: absolute;
-            left: 40px;
-            bottom: 35px;
-            color: #5a7cff;
-            letter-spacing: 4px;
-            font-size: 13px;
-            line-height: 1.8;
-            text-transform: uppercase;
-        }
-
         .cards {
             display: flex;
-            gap: 80px;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
         }
 
         .card {
-            width: 360px;
-            height: 480px;
-            border: 1px solid #3449ff;
-            border-radius: 12px;
-            background: rgba(2, 4, 56, 0.55);
-            box-shadow: 0 0 25px rgba(52, 73, 255, 0.35);
-            text-decoration: none;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            display: block;
+            width: 450px;
             transition: 0.3s ease;
         }
 
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #3449ff;
+            box-shadow: 0 0 20px rgba(52, 73, 255, .3);
+        }
+
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 45px rgba(169, 58, 217, 0.55);
-            border-color: #a93ad9;
+            transform: translateY(-10px) scale(1.02);
         }
 
-        .visual {
-            width: 220px;
-            height: 220px;
-            margin-bottom: 55px;
-            position: relative;
-        }
-
-        .circle {
-            border: 2px solid #3449ff;
-            border-radius: 50%;
-            box-shadow: 0 0 25px #3449ff;
-        }
-
-        .circle::before {
-            content: "";
-            position: absolute;
-            left: 35px;
-            right: 35px;
-            bottom: 45px;
-            height: 90px;
-            background: repeating-linear-gradient(to right,
-                    #3449ff 0 2px,
-                    transparent 2px 9px);
-            clip-path: polygon(0 50%, 20% 30%, 45% 75%, 70% 45%, 100% 20%, 100% 100%, 0 100%);
-            opacity: 0.9;
-        }
-
-        .triangle {
-            width: 0;
-            height: 0;
-            border-left: 115px solid transparent;
-            border-right: 115px solid transparent;
-            border-bottom: 200px solid #3449ff;
-            background: transparent;
-            clip-path: polygon(50% 0, 100% 100%, 78% 100%, 50% 30%, 22% 100%, 0 100%);
-            filter: drop-shadow(0 0 18px #a93ad9);
-        }
-
-        h2 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 12px;
-            font-weight: 300;
-        }
-
-        .subtitle {
-            margin-top: 18px;
-            color: #5a7cff;
-            letter-spacing: 4px;
-            font-size: 13px;
-            text-transform: uppercase;
-        }
-
-        .arrow {
-            margin-top: 35px;
-            color: #a93ad9;
-            font-size: 34px;
-        }
-
-        @media (max-width: 850px) {
-            body {
-                overflow: auto;
-            }
-
-            .cards {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .card {
-                width: 80vw;
-                height: 420px;
-            }
-
-            .quote {
-                position: static;
-                text-align: center;
-                margin-bottom: 25px;
-            }
+        .card:hover img {
+            box-shadow: 0 0 40px rgba(169, 58, 217, .6);
         }
     </style>
 </head>
@@ -172,21 +43,17 @@
     <main class="page">
         <h1></h1>
 
-        <section class="cards">
-            <a class="card" href="insights.html">
-                <div class="visual circle"></div>
-                <h2>INSIGHTS</h2>
-                <div class="subtitle">Insights</div>
-                <div class="arrow">→</div>
+        <div class="cards">
+
+            <a href="insights.html" class="card">
+                <img src="images/insights.jpeg" alt="Insights">
             </a>
 
-            <a class="card" href="portfolio.html">
-                <div class="visual triangle"></div>
-                <h2>VISUALS</h2>
-                <div class="subtitle">Visuals</div>
-                <div class="arrow">→</div>
+            <a href="visuals.html" class="card">
+                <img src="images/visuals.jpeg" alt="Visuals">
             </a>
-        </section>
+
+        </div>
 
         <div class="quote">
             Data is hindsight.<br />
