@@ -7,51 +7,39 @@
     <title>Penrose Particles</title>
 </head>
 
-<style>
-    .cards {
-        display: flex;
-        justify-content: center;
-        gap: 60px;
-        margin-top: 50px;
-        padding: 20px;
-    }
+<style />
+.cards {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 80px;
 
-    .card {
-        display: block;
-        width: 450px;
-        max-width: 100%;
-        transition: transform 0.3s ease;
-    }
+margin-top: 80px;
+}
 
-    .card img {
-        display: block;
-        width: 100%;
-        border-radius: 12px;
-        border: 1px solid #3449ff;
-        box-shadow: 0 0 20px rgba(52, 73, 255, 0.3);
-    }
+.card {
+display: block;
+width: 500px;
 
-    .card:hover {
-        transform: translateY(-10px) scale(1.02);
-    }
+transition: all .3s ease;
+}
 
-    .card:hover img {
-        box-shadow: 0 0 40px rgba(169, 58, 217, 0.6);
-    }
+.card img {
+width: 100%;
+display: block;
 
-    @media (max-width: 600px) {
-        .cards {
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
+border-radius: 12px;
+}
 
-        .card {
-            width: 90%;
-        }
-    }
+.card:hover {
+transform: translateY(-10px) scale(1.03);
+}
+
+.card:hover img {
+filter: drop-shadow(0 0 25px #3449ff)
+drop-shadow(0 0 40px #a93ad9);
+}
 </style>
-
 
 <body>
     <div class="stars"></div>
