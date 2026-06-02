@@ -5,37 +5,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Penrose Particles</title>
+</head>
 
-    <style>
+<style>
+    .cards {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+    .card {
+        display: block;
+        width: 450px;
+        max-width: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    .card img {
+        display: block;
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #3449ff;
+        box-shadow: 0 0 20px rgba(52, 73, 255, 0.3);
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.02);
+    }
+
+    .card:hover img {
+        box-shadow: 0 0 40px rgba(169, 58, 217, 0.6);
+    }
+
+    @media (max-width: 600px) {
         .cards {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 50px;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
         .card {
-            display: block;
-            width: 450px;
-            transition: 0.3s ease;
+            width: 90%;
         }
+    }
+</style>
 
-        .card img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid #3449ff;
-            box-shadow: 0 0 20px rgba(52, 73, 255, .3);
-        }
-
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        .card:hover img {
-            box-shadow: 0 0 40px rgba(169, 58, 217, .6);
-        }
-    </style>
-</head>
 
 <body>
     <div class="stars"></div>
