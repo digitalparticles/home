@@ -19,6 +19,7 @@ h1 {
     font-family: oxanium;
 }
 
+/* 
 .fade-carousel {
     position: relative;
     width: 300px;
@@ -49,9 +50,56 @@ h1 {
 
 .carousel-track img.active {
     opacity: 1;
+} */
+
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 300px));
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
 }
 
-/* Mobile responsive */
+.fade-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #101fc833;
+    cursor: pointer;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-track img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-track img.active {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .carousel-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        padding: 20px 15px;
+    }
+}
+
+
+/* Mobile responsive
 @media (max-width: 600px) {
     .fade-carousel {
         width: 90vw;
@@ -62,7 +110,7 @@ h1 {
     .carousel-track img {
         object-fit: cover;
     }
-}
+} */
 
 
 
