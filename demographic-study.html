@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>State Age Distribution Study</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --text: #1f2933;
+            --muted: #5b6673;
+            --border: #d8dee6;
+            --accent: #1d4ed8;
+            --soft: #f5f7fa;
+            --max-width: 920px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #ffffff;
+        }
+
+        main {
+            width: min(100% - 32px, var(--max-width));
+            margin: 0 auto;
+            padding: 32px 0 56px;
+        }
+
+        h1,
+        h2 {
+            line-height: 1.2;
+            margin: 0 0 14px;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            letter-spacing: 0;
+        }
+
+        h2 {
+            font-size: clamp(1.35rem, 3vw, 1.9rem);
+            margin-top: 34px;
+        }
+
+        p {
+            margin: 0 0 16px;
+            font-size: 1.02rem;
+        }
+
+        a {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .top-menu {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--accent);
+            background: var(--soft);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .source {
+            padding: 14px 16px;
+            border-left: 4px solid var(--accent);
+            background: var(--soft);
+            color: var(--muted);
+            margin: 22px 0 28px;
+        }
+
+        .figure {
+            margin: 22px 0 30px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            padding: 12px 14px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .note {
+            margin-top: 18px;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--soft);
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.45;
+        }
+
+        .note h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .note p {
+            margin: 0 0 10px;
+            font-size: inherit;
+        }
+
+        .note ul {
+            margin: 8px 0 12px 18px;
+            padding: 0;
+        }
+
+        .note li {
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                width: min(100% - 22px, var(--max-width));
+                padding-top: 22px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav class="top-menu" aria-label="Study navigation">
+            <a class="back-link" href="insights.html">Back to Studies</a>
+        </nav>
+
+        <h1>Studying Older Population Patterns Across U.S. States</h1>
+
+        <p>
+            This study uses state population data to compare how older age groups are distributed across the United
+            States.
+            The data was obtained from the U.S. Census Bureau, Population Division, which provides official population
+            estimates used for demographic analysis.
+        </p>
+
+        <p class="source">
+            Source: U.S. Census Bureau, Population Division.
+        </p>
+
+        <h2>First Study: Scatterplot With All States Included</h2>
+
+        <p>
+            In the first study, I created a scatterplot where every state is shown as a blue dot. This plot included all
+            states without removing any unusual observations. Because every state was kept in the visualization, the
+            plot
+            clearly showed several outliers, including states such as Utah. These outliers were important because they
+            showed
+            that some states have population age patterns that are very different from the general trend.
+        </p>
+
+        <p>
+            The purpose of this first scatterplot was to understand the raw relationship in the data. By looking at all
+            of the
+            blue dots together, it was possible to see both the main pattern and the states that were far away from the
+            rest of
+            the group.
+        </p>
+
+        <figure class="figure">
+            <img src="../data/regression_states_dots.png"
+                alt="Scatterplot of state age data with all states shown as blue dots">
+            <figcaption>
+                First scatterplot: all states included, with each state represented by a blue dot.
+            </figcaption>
+        </figure>
+
+        <p>
+            The Python code used to create the analysis and visualizations is available on GitHub:
+            <a href="https://github.com/digitalparticles/home" target="_blank" rel="noopener">view the project
+                code</a>.
+        </p>
+
+        <h2>Second Adjustment: Removing Outliers and Using a Logarithmic Study</h2>
+
+        <p>
+            After the first scatterplot, I made a second adjustment to improve the analysis. I considered the distance
+            of each
+            state from the midline, then removed the states that were farthest away from the general pattern. This
+            helped reduce
+            the effect of outliers on the study.
+        </p>
+
+        <p>
+            Once the outliers were removed, I used a logarithmic study to examine the remaining states. This adjustment
+            made it
+            easier to compare states that followed the main trend and helped show the relationship in a more balanced
+            way.
+        </p>
+
+        <figure class="figure">
+            <img src="../data/adjusted_log_regression_orange_blue.png"
+                alt="Adjusted logarithmic regression plot using orange and blue points">
+            <figcaption>
+                Adjusted logarithmic study: outliers were removed by considering distance from the midline.
+            </figcaption>
+        </figure>
+
+        <h2>Map Study: States With More Older People</h2>
+
+        <p>
+            The final visualization was a map of the United States. In this map, red coloring was used to show where
+            there are
+            more older people compared with other states. States with stronger red color represent places where the
+            older
+            population is higher, making the geographic pattern easier to understand at a glance.
+        </p>
+
+        <figure class="figure">
+            <img src="../data/mapPopulationByAge.jpg"
+                alt="Map showing states with higher older population values in red">
+            <figcaption>
+                Map visualization: red color shows states with higher older population values.
+            </figcaption>
+        </figure>
+
+        <div class="note">
+            <h2>Study Disclaimer</h2>
+
+            <p>
+                This study is intended solely for educational and research purposes to demonstrate the use of
+                statistical
+                analysis and geographic mapping techniques. The objective is to explore patterns within the selected
+                dataset and
+                to develop practical skills in data analysis, visualization, and interpretation.
+            </p>
+
+            <p>
+                The findings presented in this study should not be interpreted as judgments, evaluations, or conclusions
+                about
+                any individual, community, population group, region, nationality, ethnicity, or demographic category.
+                The analysis
+                focuses on aggregate data and statistical relationships only.
+            </p>
+
+            <p>
+                The study is based on a limited set of variables and does not account for all factors that may influence
+                the
+                observed outcomes. Many social, economic, educational, historical, geographic, and personal factors may
+                contribute to differences in the data and are beyond the scope of this analysis.
+            </p>
+
+            <p>Examples of factors not included in the model may include:</p>
+
+            <ul>
+                <li>Age and career stage</li>
+                <li>Professional experience</li>
+                <li>Field-specific qualifications and certifications</li>
+                <li>Geographic cost-of-living differences</li>
+                <li>Local labor market conditions</li>
+                <li>Economic opportunities within specific regions</li>
+                <li>Length of residence in a location</li>
+                <li>Family and household circumstances</li>
+                <li>Access to educational and professional resources</li>
+                <li>Industry demand and economic cycles</li>
+                <li>Urban, suburban, and rural differences</li>
+                <li>Individual career choices and preferences</li>
+            </ul>
+
+            <p>
+                As with any statistical analysis, the results may be affected by data limitations, measurement
+                differences,
+                reporting practices, and omitted variables. The relationships identified in this study represent
+                statistical
+                associations within the available data and should not be interpreted as evidence of causation.
+            </p>
+
+            <p>
+                This project is intended to support learning, encourage data literacy, and provide a visual
+                representation of
+                patterns that may be present within the selected dataset.
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
