@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regression Scatterplot</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f3f4f6; color: #111827; }
+    main { max-width: 1100px; margin: 0 auto; padding: 28px; }
+    .panel { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    p { margin: 6px 0; color: #4b5563; }
+    .formula { color: #111827; font-weight: 700; }
+    svg { width: 100%; height: auto; display: block; margin-top: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="panel">
+    <h1>Regression: Young Population Percentage vs Population Growth</h1>
+    <p class="formula">population_growth_percent = -2.2515 + 0.1272 * young_percent_2025</p>
+    <p>R-squared: 0.1767</p>
+    <p>Each dot is a state. Hover over dots to see the values.</p>
+    <svg viewBox="0 0 1100 700" role="img">
+<rect width="100%" height="100%" fill="white"/>
+<line x1="80" y1="610" x2="1045" y2="610" stroke="#6b7280" stroke-width="2"/>
+<line x1="80" y1="105" x2="80" y2="610" stroke="#6b7280" stroke-width="2"/>
+<line x1="80.0" y1="105" x2="80.0" y2="610" stroke="#e5e7eb"/>
+<line x1="80" y1="610.0" x2="1045" y2="610.0" stroke="#e5e7eb"/>
+<text x="80.0" y="635" text-anchor="middle" font-size="12" fill="#4b5563">16.2</text>
+<text x="66" y="614.0" text-anchor="end" font-size="12" fill="#4b5563">-1.5</text>
+<line x1="273.0" y1="105" x2="273.0" y2="610" stroke="#e5e7eb"/>
+<line x1="80" y1="509.0" x2="1045" y2="509.0" stroke="#e5e7eb"/>
+<text x="273.0" y="635" text-anchor="middle" font-size="12" fill="#4b5563">18.3</text>
+<text x="66" y="513.0" text-anchor="end" font-size="12" fill="#4b5563">-0.8</text>
+<line x1="466.0" y1="105" x2="466.0" y2="610" stroke="#e5e7eb"/>
+<line x1="80" y1="408.0" x2="1045" y2="408.0" stroke="#e5e7eb"/>
+<text x="466.0" y="635" text-anchor="middle" font-size="12" fill="#4b5563">20.5</text>
+<text x="66" y="412.0" text-anchor="end" font-size="12" fill="#4b5563">-0.1</text>
+<line x1="659.0" y1="105" x2="659.0" y2="610" stroke="#e5e7eb"/>
+<line x1="80" y1="307.0" x2="1045" y2="307.0" stroke="#e5e7eb"/>
+<text x="659.0" y="635" text-anchor="middle" font-size="12" fill="#4b5563">22.6</text>
+<text x="66" y="311.0" text-anchor="end" font-size="12" fill="#4b5563">0.6</text>
+<line x1="852.0" y1="105" x2="852.0" y2="610" stroke="#e5e7eb"/>
+<line x1="80" y1="206.0" x2="1045" y2="206.0" stroke="#e5e7eb"/>
+<text x="852.0" y="635" text-anchor="middle" font-size="12" fill="#4b5563">24.7</text>
+<text x="66" y="210.0" text-anchor="end" font-size="12" fill="#4b5563">1.2</text>
+<line x1="1045.0" y1="105" x2="1045.0" y2="610" stroke="#e5e7eb"/>
+<line x1="80" y1="105.0" x2="1045" y2="105.0" stroke="#e5e7eb"/>
+<text x="1045.0" y="635" text-anchor="middle" font-size="12" fill="#4b5563">26.9</text>
+<text x="66" y="109.0" text-anchor="end" font-size="12" fill="#4b5563">1.9</text>
+<line x1="80.0" y1="418.9" x2="1045.0" y2="217.2" stroke="#111827" stroke-width="3"/>
+<circle cx="562.1" cy="288.4" r="6" fill="#2563eb"><title>AL: young 21.53%, growth 0.69%, predicted 0.49%</title></circle>
+<text x="570.1" y="281.4" font-size="12" fill="#111827">AL</text>
+<circle cx="721.6" cy="448.1" r="6" fill="#2563eb"><title>AK: young 23.29%, growth -0.39%, predicted 0.71%</title></circle>
+<text x="729.6" y="441.1" font-size="12" fill="#111827">AK</text>
+<circle cx="509.9" cy="309.2" r="6" fill="#2563eb"><title>AZ: young 20.95%, growth 0.55%, predicted 0.41%</title></circle>
+<text x="517.9" y="302.2" font-size="12" fill="#111827">AZ</text>
+<circle cx="644.2" cy="263.1" r="6" fill="#2563eb"><title>AR: young 22.43%, growth 0.86%, predicted 0.60%</title></circle>
+<text x="652.2" y="256.1" font-size="12" fill="#111827">AR</text>
+<circle cx="493.7" cy="419.2" r="6" fill="#2563eb"><title>CA: young 20.77%, growth -0.19%, predicted 0.39%</title></circle>
+<text x="501.7" y="412.2" font-size="12" fill="#111827">CA</text>
+<circle cx="450.4" cy="253.0" r="6" fill="#2563eb"><title>CO: young 20.29%, growth 0.92%, predicted 0.33%</title></circle>
+<text x="458.4" y="246.0" font-size="12" fill="#111827">CO</text>
+<circle cx="376.1" cy="336.1" r="6" fill="#2563eb"><title>CT: young 19.47%, growth 0.37%, predicted 0.23%</title></circle>
+<text x="384.1" y="329.1" font-size="12" fill="#111827">CT</text>
+<circle cx="406.7" cy="276.9" r="6" fill="#2563eb"><title>DE: young 19.81%, growth 0.76%, predicted 0.27%</title></circle>
+<text x="414.7" y="269.9" font-size="12" fill="#111827">DE</text>
+<circle cx="232.4" cy="572.8" r="6" fill="#2563eb"><title>DC: young 17.89%, growth -1.23%, predicted 0.02%</title></circle>
+<text x="240.4" y="565.8" font-size="12" fill="#111827">DC</text>
+<circle cx="327.4" cy="333.0" r="6" fill="#2563eb"><title>FL: young 18.94%, growth 0.39%, predicted 0.16%</title></circle>
+<text x="335.4" y="326.0" font-size="12" fill="#111827">FL</text>
+<circle cx="620.4" cy="228.3" r="6" fill="#2563eb"><title>GA: young 22.17%, growth 1.09%, predicted 0.57%</title></circle>
+<text x="628.4" y="221.3" font-size="12" fill="#111827">GA</text>
+<circle cx="393.1" cy="527.6" r="6" fill="#2563eb"><title>HI: young 19.66%, growth -0.92%, predicted 0.25%</title></circle>
+<text x="401.1" y="520.6" font-size="12" fill="#111827">HI</text>
+<circle cx="718.9" cy="181.5" r="6" fill="#2563eb"><title>ID: young 23.26%, growth 1.40%, predicted 0.71%</title></circle>
+<text x="726.9" y="174.5" font-size="12" fill="#111827">ID</text>
+<circle cx="477.0" cy="380.0" r="6" fill="#2563eb"><title>IL: young 20.59%, growth 0.07%, predicted 0.37%</title></circle>
+<text x="485.0" y="373.0" font-size="12" fill="#111827">IL</text>
+<circle cx="659.4" cy="285.1" r="6" fill="#2563eb"><title>IN: young 22.60%, growth 0.71%, predicted 0.62%</title></circle>
+<text x="667.4" y="278.1" font-size="12" fill="#111827">IN</text>
+<circle cx="625.0" cy="404.7" r="6" fill="#2563eb"><title>IA: young 22.22%, growth -0.10%, predicted 0.57%</title></circle>
+<text x="633.0" y="397.7" font-size="12" fill="#111827">IA</text>
+<circle cx="689.4" cy="357.4" r="6" fill="#2563eb"><title>KS: young 22.93%, growth 0.22%, predicted 0.67%</title></circle>
+<text x="697.4" y="350.4" font-size="12" fill="#111827">KS</text>
+<circle cx="611.3" cy="330.5" r="6" fill="#2563eb"><title>KY: young 22.07%, growth 0.40%, predicted 0.56%</title></circle>
+<text x="619.3" y="323.5" font-size="12" fill="#111827">KY</text>
+<circle cx="671.4" cy="324.3" r="6" fill="#2563eb"><title>LA: young 22.74%, growth 0.44%, predicted 0.64%</title></circle>
+<text x="679.4" y="317.3" font-size="12" fill="#111827">LA</text>
+<circle cx="175.9" cy="286.1" r="6" fill="#2563eb"><title>ME: young 17.26%, growth 0.70%, predicted -0.06%</title></circle>
+<text x="183.9" y="279.1" font-size="12" fill="#111827">ME</text>
+<circle cx="544.9" cy="385.5" r="6" fill="#2563eb"><title>MD: young 21.34%, growth 0.03%, predicted 0.46%</title></circle>
+<text x="552.9" y="378.5" font-size="12" fill="#111827">MD</text>
+<circle cx="293.1" cy="353.2" r="6" fill="#2563eb"><title>MA: young 18.56%, growth 0.25%, predicted 0.11%</title></circle>
+<text x="301.1" y="346.2" font-size="12" fill="#111827">MA</text>
+<circle cx="457.0" cy="409.0" r="6" fill="#2563eb"><title>MI: young 20.37%, growth -0.12%, predicted 0.34%</title></circle>
+<text x="465.0" y="402.0" font-size="12" fill="#111827">MI</text>
+<circle cx="605.8" cy="294.8" r="6" fill="#2563eb"><title>MN: young 22.01%, growth 0.64%, predicted 0.55%</title></circle>
+<text x="613.8" y="287.8" font-size="12" fill="#111827">MN</text>
+<circle cx="631.0" cy="334.3" r="6" fill="#2563eb"><title>MS: young 22.29%, growth 0.38%, predicted 0.58%</title></circle>
+<text x="639.0" y="327.3" font-size="12" fill="#111827">MS</text>
+<circle cx="576.9" cy="330.8" r="6" fill="#2563eb"><title>MO: young 21.69%, growth 0.40%, predicted 0.51%</title></circle>
+<text x="584.9" y="323.8" font-size="12" fill="#111827">MO</text>
+<circle cx="445.2" cy="292.9" r="6" fill="#2563eb"><title>MT: young 20.24%, growth 0.66%, predicted 0.32%</title></circle>
+<text x="453.2" y="285.9" font-size="12" fill="#111827">MT</text>
+<circle cx="763.2" cy="297.5" r="6" fill="#2563eb"><title>NE: young 23.75%, growth 0.63%, predicted 0.77%</title></circle>
+<text x="771.2" y="290.5" font-size="12" fill="#111827">NE</text>
+<circle cx="484.7" cy="323.5" r="6" fill="#2563eb"><title>NV: young 20.67%, growth 0.45%, predicted 0.38%</title></circle>
+<text x="492.7" y="316.5" font-size="12" fill="#111827">NV</text>
+<circle cx="180.7" cy="323.9" r="6" fill="#2563eb"><title>NH: young 17.31%, growth 0.45%, predicted -0.05%</title></circle>
+<text x="188.7" y="316.9" font-size="12" fill="#111827">NH</text>
+<circle cx="500.9" cy="316.3" r="6" fill="#2563eb"><title>NJ: young 20.85%, growth 0.50%, predicted 0.40%</title></circle>
+<text x="508.9" y="309.3" font-size="12" fill="#111827">NJ</text>
+<circle cx="484.9" cy="423.7" r="6" fill="#2563eb"><title>NM: young 20.68%, growth -0.22%, predicted 0.38%</title></circle>
+<text x="492.9" y="416.7" font-size="12" fill="#111827">NM</text>
+<circle cx="380.7" cy="289.3" r="6" fill="#2563eb"><title>NY: young 19.52%, growth 0.68%, predicted 0.23%</title></circle>
+<text x="388.7" y="282.3" font-size="12" fill="#111827">NY</text>
+<circle cx="521.1" cy="185.9" r="6" fill="#2563eb"><title>NC: young 21.07%, growth 1.38%, predicted 0.43%</title></circle>
+<text x="529.1" y="178.9" font-size="12" fill="#111827">NC</text>
+<circle cx="685.4" cy="338.4" r="6" fill="#2563eb"><title>ND: young 22.89%, growth 0.35%, predicted 0.66%</title></circle>
+<text x="693.4" y="331.4" font-size="12" fill="#111827">ND</text>
+<circle cx="539.3" cy="369.0" r="6" fill="#2563eb"><title>OH: young 21.28%, growth 0.14%, predicted 0.45%</title></circle>
+<text x="547.3" y="362.0" font-size="12" fill="#111827">OH</text>
+<circle cx="715.9" cy="289.2" r="6" fill="#2563eb"><title>OK: young 23.23%, growth 0.68%, predicted 0.70%</title></circle>
+<text x="723.9" y="282.2" font-size="12" fill="#111827">OK</text>
+<circle cx="332.9" cy="386.3" r="6" fill="#2563eb"><title>OR: young 19.00%, growth 0.03%, predicted 0.16%</title></circle>
+<text x="340.9" y="379.3" font-size="12" fill="#111827">OR</text>
+<circle cx="395.2" cy="412.5" r="6" fill="#2563eb"><title>PA: young 19.68%, growth -0.15%, predicted 0.25%</title></circle>
+<text x="403.2" y="405.5" font-size="12" fill="#111827">PA</text>
+<circle cx="218.6" cy="360.9" r="6" fill="#2563eb"><title>RI: young 17.73%, growth 0.20%, predicted 0.00%</title></circle>
+<text x="226.6" y="353.9" font-size="12" fill="#111827">RI</text>
+<circle cx="479.7" cy="142.2" r="6" fill="#2563eb"><title>SC: young 20.62%, growth 1.67%, predicted 0.37%</title></circle>
+<text x="487.7" y="135.2" font-size="12" fill="#111827">SC</text>
+<circle cx="744.5" cy="222.8" r="6" fill="#2563eb"><title>SD: young 23.54%, growth 1.13%, predicted 0.74%</title></circle>
+<text x="752.5" y="215.8" font-size="12" fill="#111827">SD</text>
+<circle cx="563.3" cy="210.8" r="6" fill="#2563eb"><title>TN: young 21.54%, growth 1.21%, predicted 0.49%</title></circle>
+<text x="571.3" y="203.8" font-size="12" fill="#111827">TN</text>
+<circle cx="783.2" cy="191.3" r="6" fill="#2563eb"><title>TX: young 23.97%, growth 1.34%, predicted 0.80%</title></circle>
+<text x="791.2" y="184.3" font-size="12" fill="#111827">TX</text>
+<circle cx="972.6" cy="240.6" r="6" fill="#2563eb"><title>UT: young 26.06%, growth 1.01%, predicted 1.06%</title></circle>
+<text x="980.6" y="233.6" font-size="12" fill="#111827">UT</text>
+<circle cx="152.4" cy="478.4" r="6" fill="#2563eb"><title>VT: young 17.00%, growth -0.59%, predicted -0.09%</title></circle>
+<text x="160.4" y="471.4" font-size="12" fill="#111827">VT</text>
+<circle cx="509.7" cy="274.1" r="6" fill="#2563eb"><title>VA: young 20.95%, growth 0.78%, predicted 0.41%</title></circle>
+<text x="517.7" y="267.1" font-size="12" fill="#111827">VA</text>
+<circle cx="463.0" cy="310.4" r="6" fill="#2563eb"><title>WA: young 20.43%, growth 0.54%, predicted 0.35%</title></circle>
+<text x="471.0" y="303.4" font-size="12" fill="#111827">WA</text>
+<circle cx="378.2" cy="422.7" r="6" fill="#2563eb"><title>WV: young 19.50%, growth -0.22%, predicted 0.23%</title></circle>
+<text x="386.2" y="415.7" font-size="12" fill="#111827">WV</text>
+<circle cx="465.5" cy="361.0" r="6" fill="#2563eb"><title>WI: young 20.46%, growth 0.20%, predicted 0.35%</title></circle>
+<text x="473.5" y="354.0" font-size="12" fill="#111827">WI</text>
+<circle cx="571.2" cy="361.8" r="6" fill="#2563eb"><title>WY: young 21.63%, growth 0.19%, predicted 0.50%</title></circle>
+<text x="579.2" y="354.8" font-size="12" fill="#111827">WY</text>
+<text x="550.0" y="670" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Young population percentage in 2025</text>
+<text x="20" y="350.0" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Growth %</text>
+</svg>
+  </div>
+</main>
+</body>
+</html>

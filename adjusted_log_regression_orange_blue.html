@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adjusted Log Regression</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f3f4f6; color: #111827; }
+    main { max-width: 1120px; margin: 0 auto; padding: 28px; }
+    .panel { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    p { margin: 6px 0; color: #4b5563; }
+    .formula { color: #111827; font-weight: 700; }
+    svg { width: 100%; height: auto; display: block; margin-top: 14px; }
+  </style>
+</head>
+<body>
+<main>
+<div class="panel">
+  <h1>Adjusted Logarithmic Regression</h1>
+  <p>Removed AK, DC, HI, UT, and VT. Orange = negative Distance; blue = positive Distance.</p>
+  <p class="formula">growth = -4.8171 + 1.7511 * ln(young_percent_2025)</p>
+  <p>R-squared = 0.0919</p>
+  <svg viewBox="0 0 1200 760" role="img">
+    <rect width="100%" height="100%" fill="white"/>
+    <line x1="105.0" y1="135" x2="105.0" y2="650" stroke="#e5e7eb"/>
+    <line x1="105" y1="650.0" x2="1135" y2="650.0" stroke="#e5e7eb"/>
+    <line x1="311.0" y1="135" x2="311.0" y2="650" stroke="#e5e7eb"/>
+    <line x1="105" y1="547.0" x2="1135" y2="547.0" stroke="#e5e7eb"/>
+    <line x1="517.0" y1="135" x2="517.0" y2="650" stroke="#e5e7eb"/>
+    <line x1="105" y1="444.0" x2="1135" y2="444.0" stroke="#e5e7eb"/>
+    <line x1="723.0" y1="135" x2="723.0" y2="650" stroke="#e5e7eb"/>
+    <line x1="105" y1="341.0" x2="1135" y2="341.0" stroke="#e5e7eb"/>
+    <line x1="929.0" y1="135" x2="929.0" y2="650" stroke="#e5e7eb"/>
+    <line x1="105" y1="238.0" x2="1135" y2="238.0" stroke="#e5e7eb"/>
+    <line x1="1135.0" y1="135" x2="1135.0" y2="650" stroke="#e5e7eb"/>
+    <line x1="105" y1="135.0" x2="1135" y2="135.0" stroke="#e5e7eb"/>
+    <line x1="105" y1="650" x2="1135" y2="650" stroke="#6b7280" stroke-width="2"/>
+    <line x1="105" y1="135" x2="105" y2="650" stroke="#6b7280" stroke-width="2"/>
+    <polyline points="204.2,511.3 208.4,510.6 212.6,509.8 216.7,509.1 220.9,508.4 225.1,507.6 229.3,506.9 233.5,506.2 237.6,505.5 241.8,504.7 246.0,504.0 250.2,503.3 254.3,502.6 258.5,501.8 262.7,501.1 266.9,500.4 271.1,499.7 275.2,499.0 279.4,498.3 283.6,497.6 287.8,496.9 292.0,496.1 296.1,495.4 300.3,494.7 304.5,494.0 308.7,493.3 312.9,492.6 317.0,491.9 321.2,491.2 325.4,490.5 329.6,489.8 333.7,489.1 337.9,488.5 342.1,487.8 346.3,487.1 350.5,486.4 354.6,485.7 358.8,485.0 363.0,484.3 367.2,483.6 371.4,482.9 375.5,482.3 379.7,481.6 383.9,480.9 388.1,480.2 392.3,479.6 396.4,478.9 400.6,478.2 404.8,477.5 409.0,476.9 413.1,476.2 417.3,475.5 421.5,474.8 425.7,474.2 429.9,473.5 434.0,472.8 438.2,472.2 442.4,471.5 446.6,470.9 450.8,470.2 454.9,469.5 459.1,468.9 463.3,468.2 467.5,467.6 471.6,466.9 475.8,466.3 480.0,465.6 484.2,465.0 488.4,464.3 492.5,463.7 496.7,463.0 500.9,462.4 505.1,461.7 509.3,461.1 513.4,460.4 517.6,459.8 521.8,459.1 526.0,458.5 530.2,457.9 534.3,457.2 538.5,456.6 542.7,456.0 546.9,455.3 551.0,454.7 555.2,454.1 559.4,453.4 563.6,452.8 567.8,452.2 571.9,451.5 576.1,450.9 580.3,450.3 584.5,449.7 588.7,449.0 592.8,448.4 597.0,447.8 601.2,447.2 605.4,446.5 609.6,445.9 613.7,445.3 617.9,444.7 622.1,444.1 626.3,443.5 630.4,442.8 634.6,442.2 638.8,441.6 643.0,441.0 647.2,440.4 651.3,439.8 655.5,439.2 659.7,438.6 663.9,438.0 668.1,437.4 672.2,436.8 676.4,436.2 680.6,435.5 684.8,434.9 689.0,434.3 693.1,433.7 697.3,433.1 701.5,432.6 705.7,432.0 709.8,431.4 714.0,430.8 718.2,430.2 722.4,429.6 726.6,429.0 730.7,428.4 734.9,427.8 739.1,427.2 743.3,426.6 747.5,426.0 751.6,425.5 755.8,424.9 760.0,424.3 764.2,423.7 768.4,423.1 772.5,422.5 776.7,422.0 780.9,421.4 785.1,420.8 789.2,420.2 793.4,419.6 797.6,419.1 801.8,418.5 806.0,417.9 810.1,417.3 814.3,416.8 818.5,416.2 822.7,415.6 826.9,415.0 831.0,414.5 835.2,413.9 839.4,413.3 843.6,412.8 847.7,412.2 851.9,411.6 856.1,411.1 860.3,410.5 864.5,410.0 868.6,409.4 872.8,408.8 877.0,408.3 881.2,407.7 885.4,407.2 889.5,406.6 893.7,406.0 897.9,405.5 902.1,404.9 906.3,404.4 910.4,403.8 914.6,403.3 918.8,402.7 923.0,402.2 927.1,401.6 931.3,401.1 935.5,400.5 939.7,400.0 943.9,399.4 948.0,398.9 952.2,398.3 956.4,397.8 960.6,397.2 964.8,396.7 968.9,396.1 973.1,395.6 977.3,395.1 981.5,394.5 985.7,394.0 989.8,393.4 994.0,392.9 998.2,392.4 1002.4,391.8 1006.5,391.3 1010.7,390.8 1014.9,390.2 1019.1,389.7 1023.3,389.2 1027.4,388.6 1031.6,388.1 1035.8,387.6" fill="none" stroke="#111827" stroke-width="4"/>
+    <circle cx="733.0" cy="400.4" r="6" fill="#f97316"><title>AL: young 21.53%, growth 0.69%, distance -7.00, predicted 0.56%</title></circle>
+    <text x="741.0" y="391.4" font-size="14" fill="#111827">AL</text>
+    <circle cx="661.6" cy="430.5" r="6" fill="#f97316"><title>AZ: young 20.95%, growth 0.55%, distance -5.50, predicted 0.51%</title></circle>
+    <text x="669.6" y="421.5" font-size="14" fill="#111827">AZ</text>
+    <circle cx="845.4" cy="363.8" r="6" fill="#f97316"><title>AR: young 22.43%, growth 0.86%, distance -4.60, predicted 0.63%</title></circle>
+    <text x="853.4" y="354.8" font-size="14" fill="#111827">AR</text>
+    <circle cx="639.3" cy="589.6" r="6" fill="#f97316"><title>CA: young 20.77%, growth -0.19%, distance -2.70, predicted 0.50%</title></circle>
+    <text x="647.3" y="580.6" font-size="14" fill="#111827">CA</text>
+    <circle cx="580.1" cy="349.1" r="6" fill="#f97316"><title>CO: young 20.29%, growth 0.92%, distance -0.80, predicted 0.45%</title></circle>
+    <text x="588.1" y="340.1" font-size="14" fill="#111827">CO</text>
+    <circle cx="478.4" cy="469.5" r="6" fill="#2563eb"><title>CT: young 19.47%, growth 0.37%, distance 1.60, predicted 0.38%</title></circle>
+    <text x="486.4" y="460.5" font-size="14" fill="#111827">CT</text>
+    <circle cx="520.2" cy="383.7" r="6" fill="#f97316"><title>DE: young 19.81%, growth 0.76%, distance -0.50, predicted 0.41%</title></circle>
+    <text x="528.2" y="374.7" font-size="14" fill="#111827">DE</text>
+    <circle cx="411.6" cy="464.9" r="6" fill="#f97316"><title>FL: young 18.94%, growth 0.39%, distance -6.80, predicted 0.33%</title></circle>
+    <text x="419.6" y="455.9" font-size="14" fill="#111827">FL</text>
+    <circle cx="812.9" cy="313.5" r="6" fill="#f97316"><title>GA: young 22.17%, growth 1.09%, distance -18.80, predicted 0.61%</title></circle>
+    <text x="820.9" y="304.5" font-size="14" fill="#111827">GA</text>
+    <circle cx="947.8" cy="245.7" r="6" fill="#2563eb"><title>ID: young 23.26%, growth 1.40%, distance 0.20, predicted 0.69%</title></circle>
+    <text x="955.8" y="236.7" font-size="14" fill="#111827">ID</text>
+    <circle cx="616.5" cy="532.9" r="6" fill="#2563eb"><title>IL: young 20.59%, growth 0.07%, distance 0.10, predicted 0.48%</title></circle>
+    <text x="624.5" y="523.9" font-size="14" fill="#111827">IL</text>
+    <circle cx="866.4" cy="395.6" r="6" fill="#2563eb"><title>IN: young 22.60%, growth 0.71%, distance 2.00, predicted 0.64%</title></circle>
+    <text x="874.4" y="386.6" font-size="14" fill="#111827">IN</text>
+    <circle cx="819.2" cy="568.7" r="6" fill="#f97316"><title>IA: young 22.22%, growth -0.10%, distance -1.00, predicted 0.61%</title></circle>
+    <text x="827.2" y="559.7" font-size="14" fill="#111827">IA</text>
+    <circle cx="907.3" cy="500.2" r="6" fill="#f97316"><title>KS: young 22.93%, growth 0.22%, distance -2.10, predicted 0.67%</title></circle>
+    <text x="915.3" y="491.2" font-size="14" fill="#111827">KS</text>
+    <circle cx="800.5" cy="461.3" r="6" fill="#f97316"><title>KY: young 22.07%, growth 0.40%, distance -8.80, predicted 0.60%</title></circle>
+    <text x="808.5" y="452.3" font-size="14" fill="#111827">KY</text>
+    <circle cx="882.8" cy="452.4" r="6" fill="#2563eb"><title>LA: young 22.74%, growth 0.44%, distance 5.00, predicted 0.65%</title></circle>
+    <text x="890.8" y="443.4" font-size="14" fill="#111827">LA</text>
+    <circle cx="204.2" cy="397.0" r="6" fill="#f97316"><title>ME: young 17.26%, growth 0.70%, distance -0.90, predicted 0.17%</title></circle>
+    <text x="212.2" y="388.0" font-size="14" fill="#111827">ME</text>
+    <circle cx="709.5" cy="540.8" r="6" fill="#2563eb"><title>MD: young 21.34%, growth 0.03%, distance 2.00, predicted 0.54%</title></circle>
+    <text x="717.5" y="531.8" font-size="14" fill="#111827">MD</text>
+    <circle cx="364.7" cy="494.1" r="6" fill="#2563eb"><title>MA: young 18.56%, growth 0.25%, distance 4.50, predicted 0.30%</title></circle>
+    <text x="372.7" y="485.1" font-size="14" fill="#111827">MA</text>
+    <circle cx="589.2" cy="574.8" r="6" fill="#2563eb"><title>MI: young 20.37%, growth -0.12%, distance 6.90, predicted 0.46%</title></circle>
+    <text x="597.2" y="565.8" font-size="14" fill="#111827">MI</text>
+    <circle cx="793.0" cy="409.7" r="6" fill="#f97316"><title>MN: young 22.01%, growth 0.64%, distance -6.80, predicted 0.60%</title></circle>
+    <text x="801.0" y="400.7" font-size="14" fill="#111827">MN</text>
+    <circle cx="827.4" cy="466.8" r="6" fill="#f97316"><title>MS: young 22.29%, growth 0.38%, distance -1.90, predicted 0.62%</title></circle>
+    <text x="835.4" y="457.8" font-size="14" fill="#111827">MS</text>
+    <circle cx="753.3" cy="461.7" r="6" fill="#2563eb"><title>MO: young 21.69%, growth 0.40%, distance 7.10, predicted 0.57%</title></circle>
+    <text x="761.3" y="452.7" font-size="14" fill="#111827">MO</text>
+    <circle cx="573.0" cy="406.9" r="6" fill="#2563eb"><title>MT: young 20.24%, growth 0.66%, distance 1.50, predicted 0.45%</title></circle>
+    <text x="581.0" y="397.9" font-size="14" fill="#111827">MT</text>
+    <circle cx="1008.5" cy="413.5" r="6" fill="#f97316"><title>NE: young 23.75%, growth 0.63%, distance -1.00, predicted 0.73%</title></circle>
+    <text x="1016.5" y="404.5" font-size="14" fill="#111827">NE</text>
+    <circle cx="627.1" cy="451.1" r="6" fill="#2563eb"><title>NV: young 20.67%, growth 0.45%, distance 3.40, predicted 0.49%</title></circle>
+    <text x="635.1" y="442.1" font-size="14" fill="#111827">NV</text>
+    <circle cx="210.7" cy="451.7" r="6" fill="#2563eb"><title>NH: young 17.31%, growth 0.45%, distance 0.10, predicted 0.18%</title></circle>
+    <text x="218.7" y="442.7" font-size="14" fill="#111827">NH</text>
+    <circle cx="649.2" cy="440.8" r="6" fill="#f97316"><title>NJ: young 20.85%, growth 0.50%, distance -5.00, predicted 0.50%</title></circle>
+    <text x="657.2" y="431.8" font-size="14" fill="#111827">NJ</text>
+    <circle cx="627.4" cy="596.2" r="6" fill="#2563eb"><title>NM: young 20.68%, growth -0.22%, distance 3.10, predicted 0.49%</title></circle>
+    <text x="635.4" y="587.2" font-size="14" fill="#111827">NM</text>
+    <circle cx="484.7" cy="401.6" r="6" fill="#f97316"><title>NY: young 19.52%, growth 0.68%, distance -4.00, predicted 0.39%</title></circle>
+    <text x="492.7" y="392.6" font-size="14" fill="#111827">NY</text>
+    <circle cx="676.9" cy="252.0" r="6" fill="#2563eb"><title>NC: young 21.07%, growth 1.38%, distance 7.30, predicted 0.52%</title></circle>
+    <text x="684.9" y="243.0" font-size="14" fill="#111827">NC</text>
+    <circle cx="902.0" cy="472.7" r="6" fill="#2563eb"><title>ND: young 22.89%, growth 0.35%, distance 0.10, predicted 0.67%</title></circle>
+    <text x="910.0" y="463.7" font-size="14" fill="#111827">ND</text>
+    <circle cx="701.8" cy="516.9" r="6" fill="#f97316"><title>OH: young 21.28%, growth 0.14%, distance -4.80, predicted 0.54%</title></circle>
+    <text x="709.8" y="507.9" font-size="14" fill="#111827">OH</text>
+    <circle cx="943.7" cy="401.5" r="6" fill="#2563eb"><title>OK: young 23.23%, growth 0.68%, distance 3.90, predicted 0.69%</title></circle>
+    <text x="951.7" y="392.5" font-size="14" fill="#111827">OK</text>
+    <circle cx="419.1" cy="542.0" r="6" fill="#2563eb"><title>OR: young 19.00%, growth 0.03%, distance 0.80, predicted 0.34%</title></circle>
+    <text x="427.1" y="533.0" font-size="14" fill="#111827">OR</text>
+    <circle cx="504.5" cy="579.9" r="6" fill="#2563eb"><title>PA: young 19.68%, growth -0.15%, distance 1.90, predicted 0.40%</title></circle>
+    <text x="512.5" y="570.9" font-size="14" fill="#111827">PA</text>
+    <circle cx="262.7" cy="505.3" r="6" fill="#f97316"><title>RI: young 17.73%, growth 0.20%, distance -6.80, predicted 0.22%</title></circle>
+    <text x="270.7" y="496.3" font-size="14" fill="#111827">RI</text>
+    <circle cx="620.2" cy="188.8" r="6" fill="#2563eb"><title>SC: young 20.62%, growth 1.67%, distance 4.10, predicted 0.48%</title></circle>
+    <text x="628.2" y="179.8" font-size="14" fill="#111827">SC</text>
+    <circle cx="982.9" cy="305.4" r="6" fill="#f97316"><title>SD: young 23.54%, growth 1.13%, distance -4.20, predicted 0.71%</title></circle>
+    <text x="990.9" y="296.4" font-size="14" fill="#111827">SD</text>
+    <circle cx="734.7" cy="288.0" r="6" fill="#f97316"><title>TN: young 21.54%, growth 1.21%, distance -8.80, predicted 0.56%</title></circle>
+    <text x="742.7" y="279.0" font-size="14" fill="#111827">TN</text>
+    <circle cx="1035.8" cy="259.9" r="6" fill="#f97316"><title>TX: young 23.97%, growth 1.34%, distance -0.90, predicted 0.75%</title></circle>
+    <text x="1043.8" y="250.9" font-size="14" fill="#111827">TX</text>
+    <circle cx="661.3" cy="379.7" r="6" fill="#2563eb"><title>VA: young 20.95%, growth 0.78%, distance 7.40, predicted 0.51%</title></circle>
+    <text x="669.3" y="370.7" font-size="14" fill="#111827">VA</text>
+    <circle cx="597.3" cy="432.2" r="6" fill="#f97316"><title>WA: young 20.43%, growth 0.54%, distance -1.30, predicted 0.47%</title></circle>
+    <text x="605.3" y="423.2" font-size="14" fill="#111827">WA</text>
+    <circle cx="481.3" cy="594.7" r="6" fill="#2563eb"><title>WV: young 19.50%, growth -0.22%, distance 4.70, predicted 0.38%</title></circle>
+    <text x="489.3" y="585.7" font-size="14" fill="#111827">WV</text>
+    <circle cx="600.8" cy="505.4" r="6" fill="#2563eb"><title>WI: young 20.46%, growth 0.20%, distance 2.90, predicted 0.47%</title></circle>
+    <text x="608.8" y="496.4" font-size="14" fill="#111827">WI</text>
+    <circle cx="745.5" cy="506.5" r="6" fill="#2563eb"><title>WY: young 21.63%, growth 0.19%, distance 5.00, predicted 0.57%</title></circle>
+    <text x="753.5" y="497.5" font-size="14" fill="#111827">WY</text>
+    <text x="425" y="700" font-size="18" font-weight="700" fill="#111827">Young population percentage in 2025</text>
+    <text x="24" y="380" font-size="18" font-weight="700" fill="#111827">Growth %</text>
+  </svg>
+</div>
+</main>
+</body>
+</html>

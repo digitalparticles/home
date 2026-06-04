@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Demographics Distance Plot</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f3f4f6; color: #111827; }
+    main { max-width: 1120px; margin: 0 auto; padding: 28px; }
+    .panel { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    p { margin: 6px 0; color: #4b5563; }
+    canvas { display: block; width: 100%; height: auto; margin-top: 14px; border: 1px solid #e5e7eb; }
+    .legend { display: flex; gap: 18px; margin-top: 10px; align-items: center; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    .controls { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px; color: #374151; }
+    label { font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="panel">
+    <h1>3D Demographics Plot</h1>
+    <p>X = young population percentage in 2025. Y = population growth percentage from 2024 to 2025. Z = Distance, where negative means south and positive means north.</p>
+    <p>Excluding AK, DC, HI, UT, and VT.</p>
+    <div class="legend">
+      <span><span class="dot" style="background:#f97316"></span>South / negative Distance</span>
+      <span><span class="dot" style="background:#2563eb"></span>North / positive Distance</span>
+    </div>
+    <div class="controls">
+      <label>Rotate X <input id="rotX" type="range" min="-80" max="80" value="28"></label>
+      <label>Rotate Z <input id="rotZ" type="range" min="-80" max="80" value="-32"></label>
+      <label>Zoom <input id="zoom" type="range" min="220" max="430" value="320"></label>
+    </div>
+    <canvas id="plot" width="1100" height="760"></canvas>
+  </div>
+</main>
+<script>
+const data = [{'state': 'AL', 'young': 21.527211, 'growth': 0.686139, 'distance': -7.0, 'region': 'South'}, {'state': 'AZ', 'young': 20.951641, 'growth': 0.546451, 'distance': -5.5, 'region': 'South'}, {'state': 'AR', 'young': 22.433865, 'growth': 0.856022, 'distance': -4.6, 'region': 'South'}, {'state': 'CA', 'young': 20.771779, 'growth': -0.192624, 'distance': -2.7, 'region': 'South'}, {'state': 'CO', 'young': 20.294231, 'growth': 0.924349, 'distance': -0.8, 'region': 'South'}, {'state': 'CT', 'young': 19.473927, 'growth': 0.365354, 'distance': 1.6, 'region': 'North'}, {'state': 'DE', 'young': 19.81118, 'growth': 0.763844, 'distance': -0.5, 'region': 'South'}, {'state': 'FL', 'young': 18.935402, 'growth': 0.386369, 'distance': -6.8, 'region': 'South'}, {'state': 'GA', 'young': 22.171334, 'growth': 1.089986, 'distance': -18.8, 'region': 'South'}, {'state': 'ID', 'young': 23.259315, 'growth': 1.404563, 'distance': 0.2, 'region': 'North'}, {'state': 'IL', 'young': 20.587876, 'growth': 0.070676, 'distance': 0.1, 'region': 'North'}, {'state': 'IN', 'young': 22.60275, 'growth': 0.708493, 'distance': 2.0, 'region': 'North'}, {'state': 'IA', 'young': 22.222421, 'growth': -0.095666, 'distance': -1.0, 'region': 'South'}, {'state': 'KS', 'young': 22.933072, 'growth': 0.222648, 'distance': -2.1, 'region': 'South'}, {'state': 'KY', 'young': 22.071044, 'growth': 0.403019, 'distance': -8.8, 'region': 'South'}, {'state': 'LA', 'young': 22.735211, 'growth': 0.444762, 'distance': 5.0, 'region': 'North'}, {'state': 'ME', 'young': 17.262668, 'growth': 0.701916, 'distance': -0.9, 'region': 'South'}, {'state': 'MD', 'young': 21.337477, 'growth': 0.03396, 'distance': 2.0, 'region': 'North'}, {'state': 'MA', 'young': 18.556869, 'growth': 0.251017, 'distance': 4.5, 'region': 'North'}, {'state': 'MI', 'young': 20.367236, 'growth': -0.124008, 'distance': 6.9, 'region': 'North'}, {'state': 'MN', 'young': 22.010701, 'growth': 0.64307, 'distance': -6.8, 'region': 'South'}, {'state': 'MS', 'young': 22.288569, 'growth': 0.37767, 'distance': -1.9, 'region': 'South'}, {'state': 'MO', 'young': 21.69076, 'growth': 0.401491, 'distance': 7.1, 'region': 'North'}, {'state': 'MT', 'young': 20.237111, 'growth': 0.656066, 'distance': 1.5, 'region': 'North'}, {'state': 'NE', 'young': 23.748641, 'growth': 0.625341, 'distance': -1.0, 'region': 'South'}, {'state': 'NV', 'young': 20.672947, 'growth': 0.450532, 'distance': 3.4, 'region': 'North'}, {'state': 'NH', 'young': 17.314896, 'growth': 0.447825, 'distance': 0.1, 'region': 'North'}, {'state': 'NJ', 'young': 20.85129, 'growth': 0.498524, 'distance': -5.0, 'region': 'South'}, {'state': 'NM', 'young': 20.675249, 'growth': -0.223353, 'distance': 3.1, 'region': 'North'}, {'state': 'NY', 'young': 19.524586, 'growth': 0.680411, 'distance': -4.0, 'region': 'South'}, {'state': 'NC', 'young': 21.074734, 'growth': 1.375554, 'distance': 7.3, 'region': 'North'}, {'state': 'ND', 'young': 22.889619, 'growth': 0.350253, 'distance': 0.1, 'region': 'North'}, {'state': 'OH', 'young': 21.275618, 'growth': 0.144791, 'distance': -4.8, 'region': 'South'}, {'state': 'OK', 'young': 23.226634, 'growth': 0.681131, 'distance': 3.9, 'region': 'North'}, {'state': 'OR', 'young': 18.996084, 'growth': 0.028439, 'distance': 0.8, 'region': 'North'}, {'state': 'PA', 'young': 19.684095, 'growth': -0.147713, 'distance': 1.9, 'region': 'North'}, {'state': 'RI', 'young': 17.734435, 'growth': 0.198956, 'distance': -6.8, 'region': 'South'}, {'state': 'SC', 'young': 20.617298, 'growth': 1.669024, 'distance': 4.1, 'region': 'North'}, {'state': 'SD', 'young': 23.542232, 'growth': 1.12743, 'distance': -4.2, 'region': 'South'}, {'state': 'TN', 'young': 21.540815, 'growth': 1.208204, 'distance': -8.8, 'region': 'South'}, {'state': 'TX', 'young': 23.968959, 'growth': 1.339018, 'distance': -0.9, 'region': 'South'}, {'state': 'VA', 'young': 20.949128, 'growth': 0.782096, 'distance': 7.4, 'region': 'North'}, {'state': 'WA', 'young': 20.432845, 'growth': 0.538314, 'distance': -1.3, 'region': 'South'}, {'state': 'WV', 'young': 19.497188, 'growth': -0.2165, 'distance': 4.7, 'region': 'North'}, {'state': 'WI', 'young': 20.461252, 'growth': 0.198156, 'distance': 2.9, 'region': 'North'}, {'state': 'WY', 'young': 21.627745, 'growth': 0.193153, 'distance': 5.0, 'region': 'North'}];
+const canvas = document.getElementById("plot");
+const ctx = canvas.getContext("2d");
+const rotX = document.getElementById("rotX");
+const rotZ = document.getElementById("rotZ");
+const zoom = document.getElementById("zoom");
+
+const minMax = key => [Math.min(...data.map(d => d[key])), Math.max(...data.map(d => d[key]))];
+const [xMin, xMax] = minMax("young");
+const [yMin, yMax] = minMax("growth");
+const [zMin, zMax] = minMax("distance");
+const scale = (v, min, max) => max === min ? 0 : -1 + 2 * (v - min) / (max - min);
+
+function rotate(point, rx, rz) {
+  let [x, y, z] = point;
+  const cx = Math.cos(rx), sx = Math.sin(rx);
+  const cz = Math.cos(rz), sz = Math.sin(rz);
+  let y1 = y * cx - z * sx;
+  let z1 = y * sx + z * cx;
+  let x2 = x * cz - y1 * sz;
+  let y2 = x * sz + y1 * cz;
+  return [x2, y2, z1];
+}
+
+function project(point) {
+  const rx = Number(rotX.value) * Math.PI / 180;
+  const rz = Number(rotZ.value) * Math.PI / 180;
+  const s = Number(zoom.value);
+  const [x, y, z] = rotate(point, rx, rz);
+  return [550 + x * s, 390 - y * s, z];
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.font = "14px Arial";
+  ctx.lineWidth = 2;
+
+  const axes = [
+    [[-1,-1,-1], [1,-1,-1], "X: Young %"],
+    [[-1,-1,-1], [-1,1,-1], "Y: Growth %"],
+    [[-1,-1,-1], [-1,-1,1], "Z: Distance"]
+  ];
+  ctx.strokeStyle = "#374151";
+  ctx.fillStyle = "#111827";
+  for (const [a,b,label] of axes) {
+    const [ax, ay] = project(a);
+    const [bx, by] = project(b);
+    ctx.beginPath();
+    ctx.moveTo(ax, ay);
+    ctx.lineTo(bx, by);
+    ctx.stroke();
+    ctx.fillText(label, bx + 8, by - 8);
+  }
+
+  const points = data.map(d => {
+    const p = [
+      scale(d.young, xMin, xMax),
+      scale(d.growth, yMin, yMax),
+      scale(d.distance, zMin, zMax)
+    ];
+    const [px, py, depth] = project(p);
+    return {...d, px, py, depth};
+  }).sort((a,b) => a.depth - b.depth);
+
+  for (const d of points) {
+    ctx.fillStyle = d.distance < 0 ? "#f97316" : "#2563eb";
+    ctx.beginPath();
+    ctx.arc(d.px, d.py, 7, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.fillStyle = "#111827";
+    ctx.fillText(d.state, d.px + 9, d.py - 8);
+  }
+}
+
+rotX.addEventListener("input", draw);
+rotZ.addEventListener("input", draw);
+zoom.addEventListener("input", draw);
+draw();
+</script>
+</body>
+</html>
