@@ -142,6 +142,67 @@
         .home-button:hover {
             background: #344454;
         }
+
+
+        @media (max-width: 760px) {
+            body {
+                min-height: auto;
+                padding: 20px 12px;
+                align-items: flex-start;
+            }
+
+            .pop-tile-study {
+                width: 100%;
+                max-width: 100%;
+                padding: 20px 14px 24px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .pop-tile-study h2 {
+                font-size: 22px;
+                line-height: 1.2;
+            }
+
+            .pop-tile-study .subtitle {
+                margin-bottom: 18px;
+                font-size: 14px;
+            }
+
+            .pop-tile-study .tile-map {
+                width: 100%;
+                height: 590px;
+                overflow-x: auto;
+                overflow-y: visible;
+                padding-bottom: 12px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .pop-tile-study .footer,
+            .pop-tile-study .note {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+
+            .home-button {
+                display: block;
+                width: 100%;
+                max-width: 260px;
+                margin: 12px auto 0;
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .pop-tile-study {
+                padding: 18px 10px 22px;
+            }
+
+            .pop-tile-study h2 {
+                font-size: 20px;
+            }
+        }
     </style>
 
     <script>
