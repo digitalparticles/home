@@ -44,3 +44,137 @@
         .home-button:hover {
             background: #344454;
         }
+
+
+        .pop-tile-study {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111827;
+            background: #fff;
+            max-width: 980px;
+        }
+
+        .pop-tile-study h2 {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.15;
+        }
+
+        .pop-tile-study .subtitle {
+            margin: 4px 0 34px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .pop-tile-study .tile-map {
+            position: relative;
+            width: 908px;
+            height: 590px;
+        }
+
+        .pop-tile-study .tile {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 66px;
+            height: 66px;
+            border: 2px solid #d8d8d8;
+            border-radius: 7px;
+            box-sizing: border-box;
+            color: #111827;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .pop-tile-study .footer {
+            margin: 12px 0 0;
+            font-size: 17px;
+        }
+
+        .pop-tile-study .note {
+            margin: 6px 0 0;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        .home-button {
+            display: inline-block;
+
+            padding: 12px 22px;
+            border-radius: 8px;
+            background: #1f2933;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .home-button:hover {
+            background: #344454;
+        }
+
+
+        @media (max-width: 760px) {
+            body {
+                min-height: auto;
+                padding: 20px 12px;
+                align-items: flex-start;
+            }
+
+            .pop-tile-study {
+                width: 100%;
+                max-width: 100%;
+                padding: 20px 14px 24px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .pop-tile-study h2 {
+                font-size: 22px;
+                line-height: 1.2;
+            }
+
+            .pop-tile-study .subtitle {
+                margin-bottom: 18px;
+                font-size: 14px;
+            }
+
+            .pop-tile-study .tile-map {
+                width: 100%;
+                height: 590px;
+                overflow-x: auto;
+                overflow-y: visible;
+                padding-bottom: 12px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .pop-tile-study .footer,
+            .pop-tile-study .note {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+
+            .home-button {
+                display: block;
+                width: 100%;
+                max-width: 260px;
+                margin: 12px auto 0;
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .pop-tile-study {
+                padding: 18px 10px 22px;
+            }
+
+            .pop-tile-study h2 {
+                font-size: 20px;
+            }
+        }

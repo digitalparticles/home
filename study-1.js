@@ -1,0 +1,73 @@
+
+const positions = {
+    AK: [0, 0], ME: [0, 11],
+    VT: [1, 9], NH: [1, 10],
+    WA: [2, 0], ID: [2, 1], MT: [2, 2], ND: [2, 3], MN: [2, 4],
+    IL: [2, 5], WI: [2, 6], MI: [2, 7], NY: [2, 8], MA: [2, 9], RI: [2, 10],
+    OR: [3, 0], NV: [3, 1], WY: [3, 2], SD: [3, 3], IA: [3, 4],
+    IN: [3, 5], OH: [3, 6], PA: [3, 7], NJ: [3, 8], CT: [3, 9],
+    CA: [4, 0], UT: [4, 1], CO: [4, 2], NE: [4, 3], MO: [4, 4],
+    KY: [4, 5], WV: [4, 6], VA: [4, 7], MD: [4, 8], DE: [4, 9],
+    AZ: [5, 1], NM: [5, 2], KS: [5, 3], AR: [5, 4], TN: [5, 5], NC: [5, 6], SC: [5, 7],
+    OK: [6, 3], LA: [6, 4], MS: [6, 5], AL: [6, 6], GA: [6, 7],
+    HI: [7, 0], TX: [7, 3], FL: [7, 8]
+};
+
+const ratios = {
+    AK: 2.55, ME: 3.85, VT: 3.60, NH: 3.72,
+    WA: 3.15, ID: 2.55, MT: 3.15, ND: 2.82, MN: 2.75,
+    IL: 3.10, WI: 3.22, MI: 3.25, NY: 3.30, MA: 3.25, RI: 3.55,
+    OR: 3.35, NV: 3.08, WY: 3.05, SD: 2.75, IA: 2.85,
+    IN: 2.90, OH: 3.08, PA: 3.35, NJ: 3.10, CT: 3.20,
+    CA: 2.90, UT: 2.05, CO: 3.10, NE: 2.60, MO: 3.00,
+    KY: 2.95, WV: 3.55, VA: 3.05, MD: 2.95, DE: 3.35,
+    AZ: 3.10, NM: 3.15, KS: 2.75, AR: 2.90, TN: 3.00, NC: 3.05, SC: 3.10,
+    OK: 2.72, LA: 2.85, MS: 2.90, AL: 3.05, GA: 2.85,
+    HI: 3.35, TX: 2.55, FL: 3.55
+};
+
+const tileSize = 66;
+const gap = 10;
+const values = Object.values(ratios);
+const min = Math.min(...values);
+const max = Math.max(...values);
+
+function hexToRgb(hex) {
+    const clean = hex.replace("#", "");
+    return [
+        parseInt(clean.slice(0, 2), 16),
+        parseInt(clean.slice(2, 4), 16),
+        parseInt(clean.slice(4, 6), 16)
+    ];
+}
+
+function rgbToHex(rgb) {
+    return "#" + rgb.map(v => v.toString(16).padStart(2, "0")).join("");
+}
+
+function colorForRatio(value) {
+    const low = hexToRgb("#f7d7d9");
+    const high = hexToRgb("#a91d28");
+    const t = (value - min) / (max - min);
+
+    return rgbToHex(low.map((channel, i) => {
+        return Math.round(channel + (high[i] - channel) * t);
+    }));
+}
+
+const map = document.getElementById("populationTileMap");
+
+Object.entries(positions).forEach(([state, position]) => {
+    const [row, col] = position;
+
+    const tile = document.createElement("div");
+    tile.className = "tile";
+    tile.textContent = state;
+    tile.title = `${state}: ${ratios[state].toFixed(2)} adults per young person`;
+
+    tile.style.left = `${col * (tileSize + gap)}px`;
+    tile.style.top = `${row * (tileSize + gap)}px`;
+    tile.style.backgroundColor = colorForRatio(ratios[state]);
+
+    map.appendChild(tile);
+});
