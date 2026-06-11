@@ -1,130 +1,130 @@
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: #00011D;
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-}
+ body {
+     margin: 0;
+     min-height: 100vh;
+     background: #00011D;
+     color: white;
+     font-family: Arial, sans-serif;
+     overflow: hidden;
+ }
 
-.page {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 45px;
-}
+ .page {
+     position: relative;
+     z-index: 1;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 45px;
+ }
 
-h1 {
-    margin: 0;
-    font-size: clamp(38px, 6vw, 84px);
-    letter-spacing: 10px;
-    color: #3449ff;
-    text-shadow: 0 0 18px #3449ff;
-}
+ h1 {
+     margin: 0;
+     font-size: clamp(38px, 6vw, 84px);
+     letter-spacing: 10px;
+     color: #3449ff;
+     text-shadow: 0 0 18px #3449ff;
+ }
 
-.quote {
-    position: absolute;
-    left: 40px;
-    bottom: 35px;
-    color: #5a7cff;
-    letter-spacing: 4px;
-    font-size: 13px;
-    line-height: 1.8;
-    text-transform: uppercase;
-}
+ .quote {
+     position: absolute;
+     left: 40px;
+     bottom: 35px;
+     color: #5a7cff;
+     letter-spacing: 4px;
+     font-size: 13px;
+     line-height: 1.8;
+     text-transform: uppercase;
+ }
 
-.cards {
-    display: flex;
-    gap: 80px;
-}
+ .cards {
+     display: flex;
+     gap: 80px;
+ }
 
-.card {
-    width: 360px;
-    height: 480px;
-    border: 1px solid #3449ff;
-    border-radius: 12px;
-    background: #00011D;
-    box-shadow: 0 0 25px rgba(52, 73, 255, 0.35);
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s ease;
-}
+ .card {
+     width: 360px;
+     height: 480px;
+     border: 1px solid #3449ff;
+     border-radius: 12px;
+     background: #00011D;
+     box-shadow: 0 0 25px rgba(52, 73, 255, 0.35);
+     text-decoration: none;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     transition: 0.3s ease;
+ }
 
-.card img {
-    display: block;
-    width: 90%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
+ .card img {
+     display: block;
+     width: 90%;
+     aspect-ratio: 1 / 1;
+     object-fit: cover;
+     margin-bottom: 20px;
+ }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 25px rgba(169, 58, 217, 0.55);
-    border-color: #5d1a7a;
-}
+ .card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 0 25px rgba(169, 58, 217, 0.55);
+     border-color: #5d1a7a;
+ }
 
-.visual {
-    width: 220px;
-    height: 220px;
-    margin-bottom: 55px;
-    position: relative;
-}
+ .visual {
+     width: 220px;
+     height: 220px;
+     margin-bottom: 55px;
+     position: relative;
+ }
 
 
-h2 {
-    margin: 0;
-    font-size: 28px;
-    letter-spacing: 12px;
-    font-weight: 250;
-}
+ h2 {
+     margin: 0;
+     font-size: 28px;
+     letter-spacing: 12px;
+     font-weight: 250;
+ }
 
-.arrow {
-    margin-top: 20px;
-    color: #a93ad9;
-    font-size: 34px;
-}
+ .arrow {
+     margin-top: 20px;
+     color: #a93ad9;
+     font-size: 34px;
+ }
 
-@media (max-width: 850px) {
-    body {
-        overflow: auto;
-    }
+ @media (max-width: 850px) {
+     body {
+         overflow: auto;
+     }
 
-    .cards {
-        flex-direction: column;
-        gap: 30px;
-    }
+     .cards {
+         flex-direction: column;
+         gap: 30px;
+     }
 
-    .card {
-        width: 80vw;
-        height: 420px;
-    }
+     .card {
+         width: 80vw;
+         height: 420px;
+     }
 
-    .card img {
-        display: block;
-        width: 80%;
-        aspect-ratio: 1 / 1;
-        object-fit: contain;
-        margin-bottom: 10px;
-    }
+     .card img {
+         display: block;
+         width: 80%;
+         aspect-ratio: 1 / 1;
+         object-fit: contain;
+         margin-bottom: 10px;
+     }
 
-    .quote {
-        position: static;
-        text-align: center;
-        margin-bottom: 25px;
-    }
+     .quote {
+         position: static;
+         text-align: center;
+         margin-bottom: 25px;
+     }
 
-    .arrow {
-        margin-top: 10px;
-        color: #a93ad9;
-        font-size: 34px;
-    }
-}
+     .arrow {
+         margin-top: 10px;
+         color: #a93ad9;
+         font-size: 34px;
+     }
+ }
