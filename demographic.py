@@ -7,7 +7,7 @@ import plotly.express as px
 
 
 
-# This makes paths work automatically from VS Code
+
 HOME_DIR = Path(__file__).resolve().parent
 DATA_DIR = HOME_DIR / "data"
 
@@ -15,18 +15,14 @@ INPUT_FILE = DATA_DIR / "Demographics_Study.xlsx"
 PNG_OUTPUT = DATA_DIR / "regression_states_dots.png"
 HTML_OUTPUT = HOME_DIR / "regression_states_dots.html"
 
-# Check file exists
 if not INPUT_FILE.exists():
     raise FileNotFoundError(f"Could not find Excel file here: {INPUT_FILE}")
 
-# Load spreadsheet
 df = pd.read_excel(INPUT_FILE)
 df.columns = df.columns.str.strip()
 
-# Your State column already has abbreviations
 df["State_Code"] = df["State"].astype(str)
 
-# Create regression variables
 df["young_percent_2025"] = (df["Young_2025"] / df["Total _2025"]) * 100
 
 df["population_growth_percent"] = (
@@ -36,7 +32,6 @@ df["population_growth_percent"] = (
 x = df["young_percent_2025"]
 y = df["population_growth_percent"]
 
-# Regression
 slope, intercept = np.polyfit(x, y, 1)
 
 print("Regression formula:")
@@ -47,7 +42,6 @@ y_line = intercept + slope * x_line
 
 df["predicted_growth"] = intercept + slope * df["young_percent_2025"]
 
-# Save PNG scatterplot
 plt.figure(figsize=(12, 8))
 
 plt.scatter(
@@ -82,7 +76,6 @@ plt.legend()
 plt.savefig(PNG_OUTPUT, dpi=300, bbox_inches="tight")
 print(f"Saved PNG: {PNG_OUTPUT}")
 
-# Save HTML scatterplot
 fig = px.scatter(
     df,
     x="young_percent_2025",
@@ -115,5 +108,4 @@ fig.update_layout(
 fig.write_html(HTML_OUTPUT)
 print(f"Saved HTML: {HTML_OUTPUT}")
 
-# Show graph in VS Code
 plt.show()
