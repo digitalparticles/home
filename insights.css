@@ -86,11 +86,20 @@
 
     .study-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 18px;
     }
 
     .study-card {
+        border: 1px solid #d9e1ea;
+        border-radius: 8px;
+        padding: 24px;
+        background: #ffffff;
+        box-shadow: 0 12px 30px rgba(23, 32, 51, 0.08);
+    }
+
+    .new-row {
+        grid-column: 1 / -1;
         border: 1px solid #d9e1ea;
         border-radius: 8px;
         padding: 24px;
