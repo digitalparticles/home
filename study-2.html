@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiness Factors Study</title>
+    <link rel="stylesheet" href="study-2.css">
+</head>
+
+<body>
+    <main class="page">
+        <section class="intro">
+            <p class="eyebrow">World Happiness Report 2026 Data Study</p>
+            <h2>What factors are associated with happiness?</h2>
+            <p class="summary">
+                This study compares national happiness scores with several social and economic indicators,
+                including freedom to make life choices, GDP per capita, social support, healthy life
+                expectancy, generosity, and perceptions of corruption.
+            </p>
+        </section>
+
+        <section class="notice">
+            <h2>Important note</h2>
+            <p>
+                These charts show correlation, not causation. A strong relationship between two variables
+                does not prove that one directly causes the other. Other social, historical, political, or
+                economic factors may also influence happiness scores.
+            </p>
+        </section>
+
+        <section class="findings">
+            <h2>Key findings</h2>
+            <div class="finding-grid">
+                <article>
+                    <span class="value">0.701</span>
+                    <h3>Social support</h3>
+                    <p>Social support had the strongest positive correlation with happiness in this analysis.</p>
+                </article>
+                <article>
+                    <span class="value">0.681</span>
+                    <h3>GDP per capita</h3>
+                    <p>Countries with higher log GDP per capita tended to report higher happiness scores.</p>
+                </article>
+                <article>
+                    <span class="value">0.491</span>
+                    <h3>Freedom</h3>
+                    <p>Freedom to make life choices showed a moderate positive relationship with happiness.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <div class="section-heading">
+                <h2>Freedom and happiness</h2>
+                <p>
+                    The scatterplot below compares freedom to make life choices with happiness scores.
+                    The trend line shows a positive association.
+                </p>
+            </div>
+            <img src="imagesFromStudies/freedom_vs_happiness.png"
+                alt="Scatterplot of freedom to make life choices versus happiness score">
+        </section>
+
+        <section class="chart-section">
+            <div class="section-heading">
+                <h2>GDP per capita and happiness</h2>
+                <p>
+                    This chart compares log GDP per capita with happiness scores. The relationship is positive
+                    and stronger than the freedom relationship in this dataset.
+                </p>
+            </div>
+            <img src="imagesFromStudies/gdp_vs_happiness.png"
+                alt="Scatterplot of log GDP per capita versus happiness score">
+        </section>
+
+        <section class="chart-section">
+            <div class="section-heading">
+                <h2>Comparing all factors</h2>
+                <p>
+                    This bar chart ranks the measured factors by their correlation with happiness. Social
+                    support, GDP per capita, and healthy life expectancy were the strongest associations.
+                </p>
+            </div>
+            <img src="imagesFromStudies/happiness_factors.png"
+                alt="Horizontal bar chart comparing correlations between happiness and six factors">
+        </section>
+
+        <section class="method">
+            <h2>Method</h2>
+            <p>
+                The analysis used Pearson correlation coefficients to measure the linear relationship
+                between happiness scores and each factor. Missing values were removed before each
+                correlation was calculated.
+            </p>
+        </section>
+        <footer class="disclaimer">
+            <p>
+                Source of data: the World Happiness Report is powered by data from the Gallup World Poll. Since creating
+                the World Poll in 2005, Gallup has conducted studies in more than 160 countries and
+                territories that are home to more than 98% of the world's adult population.
+            </p>
+            <p>
+                The World Poll survey includes more than 100 global questions as well as region-specific
+                items. Gallup asks residents from Australia to Zimbabwe the same questions, every time, in
+                the same way. This makes it possible to trend data from year to year and make direct
+                country comparisons.
+            </p>
+            <p>
+                The World Happiness Report also utilises data from many other international, national,
+                regional, and other datasets which are generally available for public use.
+                <a href="https://www.worldhappiness.report/data-sharing/">World Happiness Report data sharing</a>
+            </p>
+        </footer>
+    </main>
+
+
+</body>
+
+</html>
