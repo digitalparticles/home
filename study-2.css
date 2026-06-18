@@ -220,3 +220,51 @@ h3 {
         line-height: 1.55;
     }
 }
+
+/* buttons home and studies  */
+
+.page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.page-actions a {
+    /* background: var(--accent-dark); */
+    /* color: #ffffff; */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #2e5590;
+    /* color: var(--accent-dark); */
+    color: var(--panel);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.page-actions a:hover {
+    /* background: var(--accent); */
+    border-color: var(--accent);
+    background: var(--panel);
+    color: #2e5590;
+}
+
+@media (max-width: 760px) {
+    .page-actions {
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .page-actions a {
+        flex: 1 1 150px;
+        min-height: 42px;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
