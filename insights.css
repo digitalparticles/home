@@ -124,13 +124,47 @@
         margin-top: 20px;
     }
 
-    footer {
+    /* footer {
         border-top: 1px solid #d9e1ea;
         padding: 24px;
         text-align: center;
         color: #667085;
         background: #f7f9fc;
+    } */
+
+    footer {
+        position: relative;
+        z-index: 9999;
+        pointer-events: auto;
     }
+
+    footer .footer-content {
+        position: relative;
+        z-index: 10000;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        gap: 18px;
+    }
+
+    footer .terms-link,
+    footer .terms-link a {
+        position: relative;
+        z-index: 10001;
+        pointer-events: auto;
+    }
+
+    footer .terms-link a {
+        color: #858484;
+        font-size: 11px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* new footer end*/
 
     .all-rights-reserved {
         color: #bbbbbb;
