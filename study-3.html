@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Penrose Particles — Global Audience</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+
+    <!-- Penrose CSS -->
+    <link rel="stylesheet" href="study-3.css">
+</head>
+
+<body>
+
+    <main class="map-wrapper">
+
+        <header class="map-header">
+            <h1>Penrose Particles</h1>
+            <p>Global Audience</p>
+        </header>
+
+        <section class="stats">
+
+            <div class="stat">
+                <span class="stat-number">84</span>
+                <span class="stat-label">Active Users</span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-number" id="cityCount">
+                    —
+                </span>
+
+                <span class="stat-label">
+                    Cities
+                </span>
+            </div>
+
+        </section>
+
+        <div id="map"></div>
+
+    </main>
+
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- Penrose Map JS -->
+    <script src="study-3.js"></script>
+
+</body>
+
+</html>
