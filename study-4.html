@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Why We Look — Penrose Particles</title>
+    <title>The Life of a Business | Penrose Particles</title>
 
     <link rel="stylesheet" href="study-4.css">
 </head>
@@ -16,207 +16,261 @@
 
         <!-- HEADER -->
         <header class="study-header">
-            <div class="study-notice">
-                <span>DATA ATTRIBUTION</span>
 
-                <p>
-                    This visualization is an independent design study created solely to
-                    demonstrate data visualization and interactive web techniques.
-                    The underlying research and data are credited to their original
-                    authors and publishers. This project is not affiliated with, endorsed
-                    by, or intended to reproduce or compete with the original research.
-                </p>
+            <a class="back-link" href="insights.html">
+                ← Studies
+            </a>
 
-                <a href="https://www.pewresearch.org/internet/2020/05/08/dating-and-relationships-in-the-digital-age/?utm_source=chatgpt.com"
-                    target="_blank" rel="noopener noreferrer">
-                    View the original study ↗
-                </a>
-            </div>
-            <p class="eyebrow">DIGITAL BEHAVIOR STUDY</p>
+            <p class="eyebrow">BUSINESS OPERATIONS STUDY</p>
 
-            <h1>Why We Look</h1>
+            <h1>The Life of a Business</h1>
 
             <p class="intro">
-                How often do people check up on someone they used to date?
-                Explore how online observation varies across age groups.
+                How many businesses remain operating after they open?
+                This study follows U.S. private-sector business establishments
+                born in March 2013 and examines their survival over the
+                following ten years.
             </p>
+
+            <div class="source-line">
+                <span>DATA</span>
+                U.S. Bureau of Labor Statistics · Business Employment Dynamics
+            </div>
+
         </header>
 
 
-        <!-- MAIN NUMBER -->
-        <section class="hero-stat">
+        <!-- MAIN STAT -->
+        <section class="hero-section">
 
-            <div class="number-wrap">
-                <span class="big-number" id="mainNumber">53</span>
-                <span class="percent">%</span>
-            </div>
+            <div class="hero-copy">
 
-            <p class="hero-label">
-                of U.S. social media users surveyed said they had used
-                social media to check up on someone they previously dated
-                or had a relationship with.
-            </p>
+                <p class="section-label">10-YEAR SURVIVAL</p>
 
-        </section>
+                <div class="hero-number">34.7%</div>
 
-
-        <!-- INTERACTIVE VISUALIZATION -->
-        <section class="visualization">
-
-            <div class="visual-heading">
-                <div>
-                    <p class="section-label">EXPLORE BY AGE</p>
-                    <h2>Who looks back?</h2>
-                </div>
-
-                <p class="instruction">
-                    Hover over a circle to explore the data.
+                <p class="hero-description">
+                    of U.S. private-sector establishments born in March 2013
+                    were still operating in March 2023.
                 </p>
+
             </div>
 
 
-            <div class="orbit-container" id="orbitContainer">
+            <div class="year-summary">
 
-                <div class="center-person">
-                    <div class="center-glow"></div>
-
-                    <div class="center-content">
-                        <span id="selectedPercent">53%</span>
-                        <small id="selectedLabel">
-                            All social media users
-                        </small>
-                    </div>
+                <div>
+                    <span>COHORT</span>
+                    <strong>March 2013</strong>
                 </div>
 
+                <div>
+                    <span>PERIOD</span>
+                    <strong>10 years</strong>
+                </div>
 
-                <button class="data-node node-1" data-percent="70" data-label="Ages 18–29"
-                    aria-label="Ages 18 to 29: 70 percent">
-                    <span>18–29</span>
-                    <strong>70%</strong>
-                </button>
-
-
-                <button class="data-node node-2" data-percent="61" data-label="Ages 30–49"
-                    aria-label="Ages 30 to 49: 61 percent">
-                    <span>30–49</span>
-                    <strong>61%</strong>
-                </button>
-
-
-                <button class="data-node node-3" data-percent="41" data-label="Ages 50–64"
-                    aria-label="Ages 50 to 64: 41 percent">
-                    <span>50–64</span>
-                    <strong>41%</strong>
-                </button>
-
-
-                <button class="data-node node-4" data-percent="24" data-label="Ages 65+"
-                    aria-label="Ages 65 and older: 24 percent">
-                    <span>65+</span>
-                    <strong>24%</strong>
-                </button>
+                <div>
+                    <span>SURVIVING</span>
+                    <strong>34.7%</strong>
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- SECONDARY DATA -->
-        <section class="secondary-data">
+        <!-- INTERACTIVE SURVIVAL -->
+        <section class="survival-section">
 
-            <div class="secondary-heading">
-                <p class="section-label">RELATIONSHIPS + SOCIAL MEDIA</p>
-                <h2>Looking can affect how we feel.</h2>
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">ESTABLISHMENT SURVIVAL</p>
+                    <h2>100 establishments over time</h2>
+                </div>
+
+                <p>
+                    Move through the timeline to see how the share of
+                    surviving establishments changes.
+                </p>
+
             </div>
 
 
-            <div class="data-cards">
+            <div class="visualization">
 
-                <article class="data-card">
-                    <span class="card-number">23%</span>
+                <div class="visualization-header">
 
-                    <h3>Jealous or unsure</h3>
+                    <div>
+                        <span class="small-label">YEAR</span>
+                        <strong id="currentYear">0</strong>
+                    </div>
 
-                    <p>
-                        Of partnered adults whose partner uses social media
-                        reported feeling jealous or unsure about their
-                        relationship because of their partner's interactions
-                        with others online.
-                    </p>
-                </article>
+                    <div class="current-rate">
+                        <span class="small-label">SURVIVING</span>
+                        <strong id="currentRate">100.0%</strong>
+                    </div>
 
-
-                <article class="data-card">
-                    <span class="card-number">34%</span>
-
-                    <h3>Ages 18–29</h3>
-
-                    <p>
-                        Among younger partnered adults, the share reporting
-                        jealousy or uncertainty related to their partner's
-                        social media interactions was higher.
-                    </p>
-                </article>
+                </div>
 
 
-                <article class="data-card">
-                    <span class="card-number">58%</span>
+                <!-- 100 DOTS GENERATED BY JAVASCRIPT -->
+                <div class="particle-grid" id="particleGrid" aria-label="Visualization representing 100 establishments">
+                </div>
 
-                    <h3>Observed an ex</h3>
 
-                    <p>
-                        In a recent 10-day diary study, 58% of participants
-                        encountered or intentionally observed an ex-partner
-                        on social media at least once.
-                    </p>
-                </article>
+                <!-- TIMELINE -->
+                <div class="timeline">
 
+                    <input type="range" id="yearSlider" min="0" max="10" value="0" step="1"
+                        aria-label="Years since establishment">
+
+                    <div class="timeline-labels">
+                        <span>0</span>
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- YEAR DATA -->
+            <div class="year-data" id="yearData"></div>
+
+        </section>
+
+
+        <!-- INDUSTRY -->
+        <section class="industry-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">INDUSTRY COMPARISON</p>
+                    <h2>Survival differs across industries</h2>
+                </div>
+
+                <p>
+                    Percentage of establishments from the March 2013 cohort
+                    still operating ten years later.
+                </p>
+
+            </div>
+
+
+            <div class="industry-list" id="industryList">
+                <!-- Generated by JavaScript -->
             </div>
 
         </section>
 
 
         <!-- CONTEXT -->
-        <section class="context">
+        <section class="context-section">
 
-            <p class="section-label">WHAT THE RESEARCH SUGGESTS</p>
+            <p class="section-label">INTERPRETING THE DATA</p>
 
-            <h2>Seeing is not always searching.</h2>
+            <div class="context-grid">
+
+                <h2>
+                    Survival is not the same as success.
+                </h2>
+
+                <div class="context-copy">
+
+                    <p>
+                        These figures describe whether establishments remained
+                        operating. They do not measure profitability, revenue,
+                        employment growth, productivity, or the quality of an
+                        individual business.
+                    </p>
+
+                    <p>
+                        Industry conditions, economic cycles, competition,
+                        financing, location, management decisions, and many
+                        other factors can influence establishment survival.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- METHODOLOGY -->
+        <section class="methodology">
+
+            <p class="section-label">ABOUT THE DATA</p>
 
             <p>
-                Online observation can be intentional, such as searching
-                for an ex-partner's profile, or passive, such as encountering
-                their content while scrolling. Research has associated
-                continued observation of ex-partners with experiences
-                including breakup distress, negative affect and jealousy.
+                The U.S. Bureau of Labor Statistics Business Employment
+                Dynamics program measures establishment births, deaths,
+                age, and survival using administrative employment records.
+                An establishment represents an economic unit at a single
+                physical location and should not necessarily be interpreted
+                as an entire company.
             </p>
 
-            <p class="context-note">
-                These findings describe associations observed in specific
-                studies and should not be interpreted as showing that everyone
-                who views an ex-partner online has the same motivation or
-                emotional response.
+            <p>
+                Percentages shown here represent historical outcomes for
+                groups of establishments. They should not be interpreted
+                as predictions for an individual business.
             </p>
 
         </section>
 
 
         <!-- SOURCE -->
-        <footer class="sources">
+        <section class="source-section">
 
-            <p>
-                DATA SOURCES
-            </p>
+            <div>
+                <p class="section-label">SOURCE</p>
 
-            <p>
-                Pew Research Center, <em>Dating and Relationships in the
-                    Digital Age</em> (2020). Marshall, T. C.,
-                <em>Computers in Human Behavior</em> (2026).
-            </p>
+                <h3>U.S. Bureau of Labor Statistics</h3>
 
-        </footer>
+                <p>
+                    Business Employment Dynamics<br>
+                    Establishment Age and Survival Data
+                </p>
+            </div>
+
+            <a href="https://www.bls.gov/bdm/bdmage.htm" target="_blank" rel="noopener noreferrer"
+                class="source-button">
+                View original data ↗
+            </a>
+
+        </section>
 
     </main>
+
+
+    <footer>
+
+        <div class="footer-content">
+
+            <a href="terms.html">
+                Terms, Data & Ethics
+            </a>
+
+            <p>
+                &copy; 2022 Penrose Particles - All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
 
     <script src="study-4.js"></script>
 
