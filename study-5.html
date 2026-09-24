@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Synthetic Shopping Sessions | Penrose Particles</title>
+    <link rel="stylesheet" href="study-5.css">
+    <script src="study-5.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="eyebrow">Penrose Particles · Data methods / 01</div>
+            <h1>Can synthetic shopping sessions preserve real browsing patterns?</h1>
+            <p>
+                A Bayesian network generates sessions from a public ecommerce dataset.
+                The synthetic sample is compared with original records that were held
+                out when fitting the model.
+            </p>
+        </header>
+
+        <section class="cards" id="cards"></section>
+
+        <section class="grid">
+            <div class="panel">
+                <h2>Purchase rate by segment</h2>
+                <div class="tabs" id="tabs"></div>
+                <div class="legend">
+                    <span><i class="dot real"></i>Held-out real</span>
+                    <span><i class="dot syn"></i>Synthetic</span>
+                </div>
+                <div id="segment"></div>
+            </div>
+
+            <div class="panel">
+                <h2>Segment proportions</h2>
+                <p class="method">How often each segment occurs in each dataset. Select a field on the left.</p>
+                <div class="legend">
+                    <span><i class="dot real"></i>Held-out real</span>
+                    <span><i class="dot syn"></i>Synthetic</span>
+                </div>
+                <div id="marginal"></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Generation model</h2>
+            <p>
+                Each variable is sampled from a probability table conditioned on its
+                listed parents. Categories are grouped before fitting, and smoothing
+                is applied to the probability tables.
+            </p>
+
+            <div class="diagram">
+                <span>Month → Visitor type</span>
+                <span>Month → Traffic type</span>
+                <span>Visitor + traffic → Product pages</span>
+                <span>Product pages + visitor → Exit band</span>
+                <span>Product pages + exit + traffic → Purchase</span>
+            </div>
+
+            <div class="note">
+                This graph describes how the synthetic records were generated. It does
+                not establish that changing a variable would cause a change in purchases.
+                Synthetic sessions are not actual customers.
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Reading the results</h2>
+            <p id="finding"></p>
+            <p class="method">
+                The model was fitted on 80% of the 12,330 source sessions. The remaining
+                20% were held out for comparison. A fixed random seed of 2419 was used.
+                Bars show descriptive rates; small groups may vary substantially.
+            </p>
+        </section>
+
+        <footer>
+            Source: C. Sakar and Y. Kastro,
+            <a href="https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset">
+                Online Shoppers Purchasing Intention Dataset
+            </a>,
+            UCI Machine Learning Repository, DOI 10.24432/C5F88Q.
+            Source data: CC BY 4.0. Original and synthetic data are distinct.
+        </footer>
+    </main>
+</body>
+
+</html>
