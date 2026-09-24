@@ -241,3 +241,43 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.process {
+    list-style: none;
+    counter-reset: step;
+    margin: 0 0 22px;
+    padding: 0;
+}
+
+.process li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 22px 48px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #e8edf0;
+}
+
+.process li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.process li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #146c83;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.process strong {
+    display: block;
+    font-size: 15px;
+}
+
+.process p {
+    margin: 7px 0 0;
+    font-size: 14px;
+}

@@ -77,6 +77,69 @@
                 Bars show descriptive rates; small groups may vary substantially.
             </p>
         </section>
+        <section class="panel">
+            <h2>How I made the synthetic data</h2>
+
+            <ol class="process">
+                <li>
+                    <strong>Prepared the original data</strong>
+                    <p>
+                        I started with 12,330 online shopping sessions from the UCI dataset.
+                        I selected six fields: month, visitor type, traffic type, product
+                        pages viewed, exit rate, and whether a purchase occurred. I grouped
+                        page counts and exit rates into ranges.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>Kept some sessions aside</strong>
+                    <p>
+                        I used 9,864 sessions to build the model. I held back the other
+                        2,466 sessions so I could check the results against data the model
+                        had not used.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>Built a Bayesian network</strong>
+                    <p>
+                        I chose which fields the model would use to predict each next field.
+                        For example, it uses visitor type and traffic type when generating
+                        the number of product pages viewed. It learns the probabilities
+                        for those combinations from the training sessions.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>Generated new sessions</strong>
+                    <p>
+                        The model sampled those probabilities to create 2,466 synthetic
+                        sessions. These are newly generated records, not copies of the
+                        original shoppers.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>Checked the results</strong>
+                    <p>
+                        I compared the synthetic sessions with the held-out sessions:
+                        their overall purchase rates, the sizes of different visitor groups,
+                        and purchase rates within those groups. Some groups matched more
+                        closely than others.
+                    </p>
+                </li>
+            </ol>
+
+            <p class="method">
+                The network describes patterns in this dataset. It does not prove that
+                changing a visitor's traffic source or browsing behavior would cause
+                them to make a purchase.
+            </p>
+
+            <a href="bayesian_shopper_study.py" download>
+                Download the Python code used for this study →
+            </a>
+        </section>
 
         <footer>
             Source: C. Sakar and Y. Kastro,
