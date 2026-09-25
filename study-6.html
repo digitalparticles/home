@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Can You Tell Which Customer Is Fake? | Penrose Particles
+    </title>
+
+    <link rel="stylesheet" href="study-6.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <a href="index.html" class="brand">
+            PENROSE PARTICLES
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="insights.html">
+                Insights
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section class="hero">
+
+            <p class="study-label">
+                STUDY 06 · SYNTHETIC DATA
+            </p>
+
+            <h1>
+                Can You Tell Which
+                Customer Is Fake?
+            </h1>
+
+            <p class="hero-text">
+                A probabilistic model trained on real
+                online shopping behaviour, then I generated an
+                artificial customer population, and then
+                asked a machine-learning model to tell
+                the real shoppers from the synthetic ones.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             QUESTION
+        ====================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    THE QUESTION
+                </p>
+
+                <h2>
+                    What makes synthetic data realistic?
+                </h2>
+
+            </div>
+
+            <div class="two-column">
+
+                <p>
+                    A synthetic dataset can reproduce simple
+                    statistics such as purchase rate or visitor
+                    type while still failing to reproduce the
+                    relationships that exist between customer
+                    behaviours.
+                </p>
+
+                <p>
+                    This experiment tests both. We compare the
+                    distributions directly and train a classifier
+                    whose only job is to identify whether a
+                    shopping session came from the real or
+                    synthetic population.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DATASET SIZE
+        ====================================== -->
+
+        <section class="metrics">
+
+            <article class="metric">
+
+                <span class="metric-number" id="realRows">
+                    —
+                </span>
+
+                <span class="metric-label">
+                    REAL SESSIONS
+                </span>
+
+            </article>
+
+
+            <article class="metric">
+
+                <span class="metric-number" id="syntheticRows">
+                    —
+                </span>
+
+                <span class="metric-label">
+                    SYNTHETIC SESSIONS
+                </span>
+
+            </article>
+
+
+            <article class="metric">
+
+                <span class="metric-number" id="accuracy">
+                    —
+                </span>
+
+                <span class="metric-label">
+                    DETECTION ACCURACY
+                </span>
+
+            </article>
+
+
+            <article class="metric">
+
+                <span class="metric-number" id="similarity">
+                    —
+                </span>
+
+                <span class="metric-label">
+                    AVG. DISTRIBUTION SIMILARITY
+                </span>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================
+             EXPERIMENT
+        ====================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    EXPERIMENT
+                </p>
+
+                <h2>
+                    Real data in. Artificial customers out.
+                </h2>
+
+            </div>
+
+
+            <div class="process">
+
+                <div class="process-step">
+
+                    <span>01</span>
+
+                    <strong>
+                        Real shoppers
+                    </strong>
+
+                    <p>
+                        Start with observed online
+                        shopping sessions.
+                    </p>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>02</span>
+
+                    <strong>
+                        Learn dependencies
+                    </strong>
+
+                    <p>
+                        Estimate conditional behavioural
+                        relationships.
+                    </p>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>03</span>
+
+                    <strong>
+                        Generate
+                    </strong>
+
+                    <p>
+                        Create new artificial
+                        shopping sessions.
+                    </p>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>04</span>
+
+                    <strong>
+                        Challenge
+                    </strong>
+
+                    <p>
+                        Ask ML to identify which
+                        sessions are synthetic.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CLASSIFIER RESULT
+        ====================================== -->
+
+        <section class="dark-section">
+
+            <div class="result-grid">
+
+                <div>
+
+                    <p class="eyebrow light">
+                        THE DETECTOR
+                    </p>
+
+                    <h2>
+                        Can the machine
+                        spot the fake?
+                    </h2>
+
+                    <p class="result-description" id="classifierInterpretation">
+                        Loading experiment results...
+                    </p>
+
+                </div>
+
+
+                <div class="accuracy-display">
+
+                    <span class="huge-number" id="accuracyLarge">
+                        —
+                    </span>
+
+                    <span>
+                        classification accuracy
+                    </span>
+
+                    <div class="random-line">
+
+                        <span>
+                            50%
+                        </span>
+
+                        <div class="line"></div>
+
+                        <span>
+                            random guessing
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             REAL VS SYNTHETIC
+        ====================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    REAL VS SYNTHETIC
+                </p>
+
+                <h2>
+                    Do the populations look alike?
+                </h2>
+
+            </div>
+
+
+            <div class="comparison-table">
+
+                <div class="comparison-row header-row">
+
+                    <span>
+                        METRIC
+                    </span>
+
+                    <span>
+                        REAL
+                    </span>
+
+                    <span>
+                        SYNTHETIC
+                    </span>
+
+                    <span>
+                        DIFFERENCE
+                    </span>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <span>
+                        Purchase rate
+                    </span>
+
+                    <span id="realPurchase">
+                        —
+                    </span>
+
+                    <span id="syntheticPurchase">
+                        —
+                    </span>
+
+                    <span id="purchaseDifference">
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <span>
+                        Returning visitors
+                    </span>
+
+                    <span id="realReturning">
+                        —
+                    </span>
+
+                    <span id="syntheticReturning">
+                        —
+                    </span>
+
+                    <span id="returningDifference">
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <span>
+                        Weekend sessions
+                    </span>
+
+                    <span id="realWeekend">
+                        —
+                    </span>
+
+                    <span id="syntheticWeekend">
+                        —
+                    </span>
+
+                    <span id="weekendDifference">
+                        —
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             VARIABLE SIMILARITY
+        ====================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    DISTRIBUTION TEST
+                </p>
+
+                <h2>
+                    Similarity by variable
+                </h2>
+
+                <p>
+                    100% means the synthetic distribution
+                    closely matches the observed distribution.
+                </p>
+
+            </div>
+
+
+            <div class="similarity-list" id="similarityList">
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             IMPORTANT NOTE
+        ====================================== -->
+
+        <section class="callout">
+
+            <p class="eyebrow">
+                WHY THIS MATTERS
+            </p>
+
+            <h2>
+                Matching averages is not enough.
+            </h2>
+
+            <p>
+                Two datasets can have almost identical averages
+                while containing very different relationships
+                between variables. Synthetic-data quality
+                therefore has to be tested at more than one
+                statistical level.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             METHODOLOGY
+        ====================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    METHODOLOGY
+                </p>
+
+                <h2>
+                    How the experiment works
+                </h2>
+
+            </div>
+
+
+            <div class="method-grid">
+
+                <article>
+
+                    <span>01</span>
+
+                    <h3>
+                        Source
+                    </h3>
+
+                    <p>
+                        Online Shoppers Purchasing Intention
+                        dataset containing observed web sessions.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>02</span>
+
+                    <h3>
+                        Generation
+                    </h3>
+
+                    <p>
+                        Conditional probability distributions
+                        are estimated from behavioural
+                        relationships in the original data.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>03</span>
+
+                    <h3>
+                        Validation
+                    </h3>
+
+                    <p>
+                        Real and synthetic distributions are
+                        compared using total variation distance.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>04</span>
+
+                    <h3>
+                        ML Challenge
+                    </h3>
+
+                    <p>
+                        A random forest receives mixed real and
+                        synthetic observations and attempts to
+                        identify their origin.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             LIMITATION
+        ====================================== -->
+
+        <section class="limitations">
+
+            <p class="eyebrow">
+                INTERPRETATION
+            </p>
+
+            <h2>
+                Similar does not mean identical.
+            </h2>
+
+            <p>
+                A low detection accuracy does not prove that
+                synthetic data is equivalent to real data,
+                anonymous, or safe for every use. It only
+                indicates that the classifier used in this
+                experiment had difficulty distinguishing the
+                two populations using the selected variables.
+            </p>
+
+            <p>
+                The dependency structure used here is
+                probabilistic. It should not be interpreted as
+                proof that one customer behaviour causes
+                another.
+            </p>
+
+            <a href="study-6.py" class="code-link" target="_blank">
+                VIEW PYTHON ANALYSIS →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <span>
+            PENROSE PARTICLES
+        </span>
+
+        <span>
+            Study 06 · Synthetic Data
+        </span>
+
+    </footer>
+
+
+    <script src="study-6.js"></script>
+
+</body>
+
+</html>
