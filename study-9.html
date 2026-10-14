@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Study 09 — Can delivery delays, purchase amounts and customer reviews predict whether a customer will return?">
+
+    <title>Study 09 — The Customer Who Never Returned | Penrose Particles</title>
+
+    <link rel="stylesheet" href="study-9.css">
+    <script src="study-9.js" defer></script>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="eyebrow">PENROSE PARTICLES / STUDY 09</div>
+
+        <h1>The Customer Who Never Returned</h1>
+
+        <p class="intro">
+            Can a delivery delay, the amount spent on a first order,
+            and a customer review help us anticipate another purchase?
+            Change the highlighted spreadsheet cells to explore
+            the estimated likelihood of a customer returning.
+        </p>
+
+        <p class="research-note">
+            <strong>Research status:</strong>
+            This interactive calculator uses illustrative coefficients.
+            Its results are hypothetical scenarios, not predictions
+            validated against real customer transactions.
+        </p>
+
+        <section class="spreadsheet" aria-label="Customer return probability calculator">
+
+            <div class="sheet-toolbar">
+                <div class="file-name">
+                    <span class="excel-badge">XLS</span>
+                    customer_retention_model
+                </div>
+
+                <div class="sheet-tab">
+                    Sheet: <span>Return Probability</span>
+                </div>
+            </div>
+
+            <div class="table-scroll">
+
+                <table aria-label="Interactive Excel-style model">
+
+                    <colgroup>
+                        <col style="width:45px">
+                        <col style="width:34%">
+                        <col style="width:24%">
+                        <col>
+                    </colgroup>
+
+                    <thead>
+                        <tr class="column-letters">
+                            <th>#</th>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr class="section-row">
+                            <th class="row-number">1</th>
+                            <td colspan="3">INPUT VARIABLES — EDIT COLUMN B</td>
+                        </tr>
+
+                        <tr>
+                            <th class="row-number">2</th>
+                            <td class="cell-label">Days Late</td>
+                            <td class="editable-cell">
+                                <label class="input-wrap">
+                                    <input type="number" id="days" value="3" min="0" max="365" step="1"
+                                        aria-label="Days late">
+                                    <span class="input-suffix">days</span>
+                                </label>
+                            </td>
+                            <td class="cell-note">0 = delivered on time or early</td>
+                        </tr>
+
+                        <tr>
+                            <th class="row-number">3</th>
+                            <td class="cell-label">First Purchase Amount</td>
+                            <td class="editable-cell">
+                                <label class="input-wrap">
+                                    <span class="input-suffix">R$</span>
+                                    <input type="number" id="amount" value="150" min="0" max="100000" step="1"
+                                        aria-label="Amount spent in Brazilian reais">
+                                </label>
+                            </td>
+                            <td class="cell-note">First order spending, BRL</td>
+                        </tr>
+
+                        <tr>
+                            <th class="row-number">4</th>
+                            <td class="cell-label">Customer Review</td>
+                            <td class="editable-cell">
+                                <label class="input-wrap">
+                                    <input type="number" id="review" value="4" min="1" max="5" step="1"
+                                        aria-label="Review score from 1 to 5">
+                                    <span class="input-suffix">/ 5</span>
+                                </label>
+                            </td>
+                            <td class="cell-note">Review score, 1–5 stars</td>
+                        </tr>
+
+                        <tr class="section-row">
+                            <th class="row-number">5</th>
+                            <td colspan="3">CALCULATED RESULTS</td>
+                        </tr>
+
+                        <tr>
+                            <th class="row-number">6</th>
+                            <td class="cell-label">Likelihood of Return</td>
+                            <td class="result-primary" id="probability" aria-live="polite">—</td>
+                            <td class="cell-note">
+                                Estimated second purchase within 90 days
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th class="row-number">7</th>
+                            <td class="cell-label">Likelihood of No Return</td>
+                            <td class="result-secondary" id="noReturn">—</td>
+                            <td class="cell-note">
+                                100% minus return probability
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th class="row-number">8</th>
+                            <td class="cell-label">Model Score (z)</td>
+                            <td class="result-secondary" id="score">—</td>
+                            <td class="cell-note">
+                                Logistic regression model score
+                            </td>
+                        </tr>
+
+                        <tr class="section-row">
+                            <th class="row-number">9</th>
+                            <td colspan="3">EXCEL FORMULA</td>
+                        </tr>
+
+                        <tr>
+                            <th class="row-number">10</th>
+                            <td class="cell-label">Probability Formula</td>
+                            <td colspan="2" class="formula-cell">
+                                =1/(1+EXP(-(-2.2-0.12*B2+0.004*(B3-100)+0.48*(B4-3))))
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chart-area">
+
+                <div class="chart-header">
+                    <strong>Chance of a Second Purchase Within 90 Days</strong>
+                    <span id="chartSummary">—</span>
+                </div>
+
+                <div class="probability-meter" id="probabilityBar" role="progressbar"
+                    aria-label="Estimated return probability" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+
+                    <div class="probability-fill" id="barFill"></div>
+                </div>
+
+                <div class="meter-labels">
+                    <span>0%</span>
+                    <span>25%</span>
+                    <span>50%</span>
+                    <span>75%</span>
+                    <span>100%</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="actions">
+            <button type="button" id="reset">Reset Example</button>
+            <button type="button" id="copy" class="copy-button">
+                Copy Excel Formula
+            </button>
+        </div>
+
+        <section class="methodology">
+
+            <h2>How the Calculation Works</h2>
+
+            <p>
+                This study uses a logistic regression formula to estimate
+                the probability of a customer making another purchase
+                within 90 days of their first order.
+            </p>
+
+            <div class="equation">
+                P(return) = 1 / (1 + EXP(-z))
+            </div>
+
+            <p>Where the model score is:</p>
+
+            <div class="equation">
+                z = -2.2 - 0.12 × DaysLate
+                + 0.004 × (Amount - 100)
+                + 0.48 × (Review - 3)
+            </div>
+
+            <p>
+                In this demonstration, additional delivery delays reduce
+                the estimated likelihood of returning. Higher review
+                scores and larger first purchases increase it.
+                These relationships are assumptions for the prototype,
+                not findings from fitted customer data.
+            </p>
+
+            <h2>Research Dataset</h2>
+
+            <p>
+                The planned empirical analysis uses the
+                <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank"
+                    rel="noopener noreferrer">
+                    Brazilian E-Commerce Public Dataset by Olist
+                </a>.
+                It contains real anonymized order information, including
+                purchase dates, delivery dates, order values and reviews.
+            </p>
+
+            <p>
+                A customer is counted as returning when they make a
+                second order within 90 days. Customers must have a full
+                90-day observation window to be included in the analysis.
+                The future fitted model will measure associations,
+                rather than establish causation.
+            </p>
+
+            <p class="disclaimer">
+                A customer who does not make another purchase within
+                90 days has not necessarily stopped shopping permanently.
+            </p>
+
+        </section>
+
+        <footer>
+            © Penrose Particles · Study 09 · Customer Retention Research
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
