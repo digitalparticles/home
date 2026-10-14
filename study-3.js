@@ -18,7 +18,7 @@ const viewers = [
         country: "USA",
         lat: 39.0438,
         lng: -77.4874,
-        users: 25
+        users: 34
     },
 
     {
@@ -27,7 +27,7 @@ const viewers = [
         country: "USA",
         lat: 40.7128,
         lng: -74.0060,
-        users: 14
+        users: 145
     },
 
     {
@@ -126,7 +126,7 @@ const viewers = [
         country: "USA",
         lat: 37.3382,
         lng: -121.8863,
-        users: 1
+        users: 4
     },
 
     {
@@ -261,7 +261,7 @@ const viewers = [
         country: "USA",
         lat: 41.8781,
         lng: -87.6298,
-        users: 1
+        users: 11
     },
 
     {
@@ -666,7 +666,7 @@ const viewers = [
         country: "USA",
         lat: 32.7767,
         lng: -96.7970,
-        users: 1
+        users: 7
     },
 
     {
@@ -684,7 +684,7 @@ const viewers = [
         country: "USA",
         lat: 29.4241,
         lng: -98.4936,
-        users: 1
+        users: 9
     },
 
     {
@@ -756,6 +756,79 @@ const viewers = [
         country: "USA",
         lat: 37.8018,
         lng: -80.4456,
+        users: 1
+    },
+
+    {
+        city: "London",
+        region: "England",
+        country: "United Kingdom",
+        lat: 51.5074,
+        lng: -0.1278,
+        users: 1
+    },
+    {
+        city: "Casablanca",
+        region: "Casablanca-Settat",
+        country: "Morocco",
+        lat: 33.5731,
+        lng: -7.5898,
+        users: 1
+    },
+    {
+        city: "Paris",
+        region: "Île-de-France",
+        country: "France",
+        lat: 48.8566,
+        lng: 2.3522,
+        users: 1
+    },
+    {
+        city: "Barcelona",
+        region: "Catalonia",
+        country: "Spain",
+        lat: 41.3874,
+        lng: 2.1686,
+        users: 3
+    },
+    {
+        city: "Pisa",
+        region: "Tuscany",
+        country: "Italy",
+        lat: 43.7228,
+        lng: 10.4017,
+        users: 1
+    },
+    {
+        city: "Torino",
+        region: "Piedmont",
+        country: "Italy",
+        lat: 45.0703,
+        lng: 7.6869,
+        users: 1
+    },
+    {
+        city: "Luxembourg",
+        region: "Luxembourg",
+        country: "Luxembourg",
+        lat: 49.6116,
+        lng: 6.1319,
+        users: 1
+    },
+    {
+        city: "Marseille",
+        region: "Provence-Alpes-Côte d'Azur",
+        country: "France",
+        lat: 43.2965,
+        lng: 5.3698,
+        users: 1
+    },
+    {
+        city: "Lausanne",
+        region: "Vaud",
+        country: "Switzerland",
+        lat: 46.5197,
+        lng: 6.6323,
         users: 1
     }
 
