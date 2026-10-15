@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Study 10 — The Resignation Equation. Explore employee attrition using an interactive statistical model.">
+
+    <title>Study 10 — The Resignation Equation | Penrose Particles</title>
+
+    <link rel="stylesheet" href="study-10.css">
+    <script src="study-10.js" defer></script>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="eyebrow">
+            PENROSE PARTICLES / STUDY 10 / PEOPLE ANALYTICS
+        </div>
+
+        <h1>The Resignation Equation</h1>
+
+        <p class="subtitle">
+            Can we recognize the workplace conditions associated
+            with people leaving — before turnover becomes a costly surprise?
+        </p>
+
+        <p class="notice">
+            <strong>Demonstration, not an employee assessment.</strong>
+            The interactive probabilities below use illustrative coefficients,
+            not a model trained or validated on IBM data.
+            The IBM dataset is fictional; this page is for learning and
+            portfolio demonstration, not employment decisions.
+        </p>
+
+        <!-- KEY PERFORMANCE INDICATORS -->
+
+        <section class="kpis" aria-label="Model summary">
+
+            <article class="kpi">
+                <span>Reference dataset</span>
+                <strong>1,470</strong>
+                <small>fictional employee records</small>
+            </article>
+
+            <article class="kpi">
+                <span>Published dataset attrition</span>
+                <strong>~16%</strong>
+                <small>descriptive baseline, not model accuracy</small>
+            </article>
+
+            <article class="kpi">
+                <span>Inputs in this demo</span>
+                <strong>4</strong>
+                <small>editable workplace characteristics</small>
+            </article>
+
+            <article class="kpi">
+                <span>Scenario output</span>
+                <strong id="kpiProbability">—</strong>
+                <small>illustrative departure probability</small>
+            </article>
+
+        </section>
+
+
+        <!-- INTERACTIVE EXCEL MODEL -->
+
+        <section class="section" aria-labelledby="worksheet-title">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="eyebrow">01 / INTERACTIVE MODEL</div>
+                    <h2 id="worksheet-title">Change the conditions</h2>
+                </div>
+
+                <button type="button" id="reset">
+                    Reset scenario
+                </button>
+
+            </div>
+
+            <p class="muted">
+                Edit the blue spreadsheet cells. The scenario updates
+                immediately. Each field has the same meaning as the
+                public dataset.
+            </p>
+
+            <div class="worksheet">
+
+                <div class="sheet-toolbar">
+
+                    <span>
+                        <b class="xls">XLS</b>
+                        employee_attrition_scenario
+                    </span>
+
+                    <span class="sheet-label">Scenario_01</span>
+
+                </div>
+
+                <div class="scroll-table">
+
+                    <table>
+
+                        <colgroup>
+                            <col style="width:45px">
+                            <col style="width:35%">
+                            <col style="width:24%">
+                            <col>
+                        </colgroup>
+
+                        <thead>
+                            <tr class="letters">
+                                <th>#</th>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>C</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr class="group">
+                                <th>1</th>
+                                <td colspan="3">
+                                    SCENARIO INPUTS — EDIT COLUMN B
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>2</th>
+                                <td>Overtime</td>
+
+                                <td class="input-cell">
+                                    <select id="overtime" aria-label="Overtime">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </td>
+
+                                <td class="hint">Works overtime</td>
+                            </tr>
+
+                            <tr>
+                                <th>3</th>
+                                <td>Job satisfaction</td>
+
+                                <td class="input-cell">
+                                    <select id="satisfaction" aria-label="Job satisfaction">
+                                        <option value="1">1 — Low</option>
+                                        <option value="2">2 — Medium</option>
+                                        <option value="3" selected>3 — High</option>
+                                        <option value="4">4 — Very high</option>
+                                    </select>
+                                </td>
+
+                                <td class="hint">Dataset scale: 1–4</td>
+                            </tr>
+
+                            <tr>
+                                <th>4</th>
+                                <td>Monthly income</td>
+
+                                <td class="input-cell">
+                                    <div class="money">
+                                        <span>$</span>
+
+                                        <input id="income" type="number" min="1000" max="20000" step="100" value="6500"
+                                            aria-label="Monthly income in dataset units">
+                                    </div>
+                                </td>
+
+                                <td class="hint">Dataset's nominal currency units</td>
+                            </tr>
+
+                            <tr>
+                                <th>5</th>
+                                <td>Years at company</td>
+
+                                <td class="input-cell">
+                                    <input id="tenure" type="number" min="0" max="40" step="1" value="5"
+                                        aria-label="Years at company">
+                                </td>
+
+                                <td class="hint">Tenure: 0–40 years</td>
+                            </tr>
+
+                            <tr class="group">
+                                <th>6</th>
+                                <td colspan="3">FORMULA OUTPUT</td>
+                            </tr>
+
+                            <tr>
+                                <th>7</th>
+                                <td>Illustrative probability of leaving</td>
+
+                                <td class="output" id="leaveProb" aria-live="polite">—</td>
+
+                                <td class="hint">
+                                    Scenario only; not validated
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>8</th>
+                                <td>Illustrative probability of staying</td>
+
+                                <td id="stayProb" class="output-secondary">—</td>
+
+                                <td class="hint">
+                                    100% minus leave probability
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>9</th>
+                                <td>Model score (z)</td>
+
+                                <td id="zScore" class="output-secondary">—</td>
+
+                                <td class="hint">
+                                    Log-odds before conversion
+                                </td>
+                            </tr>
+
+                            <tr class="group">
+                                <th>10</th>
+                                <td colspan="3">
+                                    EXCEL-COMPATIBLE FORMULA
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>11</th>
+
+                                <td colspan="3" class="formula" id="formula">
+                                    =1/(1+EXP(-(-1.55+1.05*B2-0.45*(B3-2.5)-0.00006*(B4-6500)-0.065*(B5-5))))
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- PROBABILITY CHART -->
+
+                <div class="result-chart">
+
+                    <div class="chart-title">
+                        <strong>
+                            Illustrative probability of leaving
+                        </strong>
+
+                        <span id="barLabel">—</span>
+                    </div>
+
+                    <div class="track" id="probTrack" role="progressbar"
+                        aria-label="Illustrative probability of leaving" aria-valuemin="0" aria-valuemax="100"
+                        aria-valuenow="0">
+
+                        <div id="probFill"></div>
+
+                    </div>
+
+                    <div class="axis">
+                        <span>0%</span>
+                        <span>25%</span>
+                        <span>50%</span>
+                        <span>75%</span>
+                        <span>100%</span>
+                    </div>
+
+                    <div class="chart-subtitle">
+                        Changes reflect assumptions in the demonstration
+                        coefficients, not measured causal effects.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button type="button" id="copyFormula">
+                    Copy Excel formula
+                </button>
+
+                <button type="button" id="downloadScenario">
+                    Download scenario CSV
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SENSITIVITY ANALYSIS -->
+
+        <section class="section" aria-labelledby="comparison-title">
+
+            <div class="eyebrow">
+                02 / SENSITIVITY CHECK
+            </div>
+
+            <h2 id="comparison-title">
+                What changes the estimate?
+            </h2>
+
+            <p class="muted">
+                Hold the other inputs fixed and vary one condition
+                at a time. These are model simulations,
+                not observed employee outcomes.
+            </p>
+
+            <div id="comparison" class="comparison" aria-live="polite">
+            </div>
+
+        </section>
+
+
+        <!-- RESEARCH METHODOLOGY -->
+
+        <section class="section methodology">
+
+            <div class="eyebrow">
+                03 / REPRODUCIBLE RESEARCH
+            </div>
+
+            <h2>From exploration to a defensible model</h2>
+
+            <p>
+                <strong>Research question:</strong>
+                Which workplace characteristics are associated
+                with employee attrition?
+                The source is IBM HR Analytics Employee
+                Attrition &amp; Performance, a
+                <strong>fictional</strong> dataset of 1,470
+                employee records and 35 fields.
+
+                <a href="https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset"
+                    target="_blank" rel="noopener noreferrer">
+                    View the original dataset ↗
+                </a>
+
+                <a href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/blob/main/study-10-analysis.py"
+                    target="_blank" rel="noopener noreferrer" class="github-link">
+                    View Python Analysis on GitHub ↗
+                </a>
+
+            </p>
+
+            <p>
+                <strong>Demonstration formula:</strong>
+                P(leave) = 1 / (1 + EXP(−z)),
+                where z = −1.55 + 1.05 × overtime
+                − 0.45 × (satisfaction − 2.5)
+                − 0.00006 × (monthly income − 6500)
+                − 0.065 × (years at company − 5).
+
+                These are invented illustrative parameters.
+                They are <em>not</em> conclusions from the data.
+            </p>
+
+            <p>
+                <strong>Reproduction:</strong>
+                Download the CSV from Kaggle, place it alongside
+                <code>study-10-analysis.py</code>,
+                and run the Python script.
+
+                It produces a holdout evaluation and exports
+                fitted coefficients as
+                <code>study-10-model.json</code>.
+
+                Only then should the webpage coefficients
+                be replaced with the trained estimates.
+            </p>
+
+            <p>
+                <strong>Responsible use:</strong>
+                A model built on fictional employee data does
+                not generalize to real people.
+
+                Real HR systems require suitable data,
+                time-aware validation, fairness testing,
+                privacy review, governance and human oversight.
+
+                Never use this prototype to rank or make employment
+                decisions about individuals.
+
+                Associations do not establish causes.
+            </p>
+
+        </section>
+
+        <footer>
+            © Penrose Particles · Study 10 · People Analytics
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
